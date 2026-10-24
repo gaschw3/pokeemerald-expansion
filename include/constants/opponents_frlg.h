@@ -32,7 +32,7 @@
 #define TRAINER_BUG_CATCHER_CONNER                 26
 #define TRAINER_LASS_JANICE                        27
 #define TRAINER_LASS_SALLY                         28
-#define TRAINER_LASS_ROBIN                         29
+#define TRAINER_ACE_ROBIN                          29
 #define TRAINER_LASS_CRISSY                        30
 #define TRAINER_LASS_MIRIAM                        31
 #define TRAINER_LASS_IRIS                          32
@@ -415,7 +415,7 @@
 #define TRAINER_BIKER_GOON                         409
 #define TRAINER_BIKER_GOON_2                       410
 #define TRAINER_BIKER_GOON_3                       411
-#define TRAINER_BUG_CATCHER_ANTHONY                412
+#define TRAINER_ACE_ANTHONY                412
 #define TRAINER_BUG_CATCHER_CHARLIE                413
 #define TRAINER_TWINS_ELI_ANNE_2                   414
 #define TRAINER_YOUNGSTER_JOHNSON                  415
@@ -628,11 +628,15 @@
 #define TRAINER_CHAMPION_REMATCH_CHARMANDER        622
 #define TRAINER_CUE_BALL_PAXTON                    623
 
+//Custom trainers
+#define TRAINER_LASS_JOANIE                        624
+#define TRAINER_HIKER_CODY                         625
+
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is
 //       only space for 25 additional trainers before trainer flag space overflows.
 //       MAX_TRAINERS_COUNT_FRLG can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT_FRLG                      624
+#define TRAINERS_COUNT_FRLG                      626
 #define MAX_TRAINERS_COUNT_FRLG                  768
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_FRLG_H

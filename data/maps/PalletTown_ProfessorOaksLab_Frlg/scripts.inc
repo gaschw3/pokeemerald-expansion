@@ -2,6 +2,7 @@
 .equ PLAYER_STARTER_SPECIES,  VAR_TEMP_2
 .equ RIVAL_STARTER_SPECIES,   VAR_TEMP_3
 .equ RIVAL_STARTER_ID,        VAR_TEMP_4
+.equ PLAYER_STARTER_NATURE,   VAR_TEMP_5
 
 .equ SHOWED_OAK_COMPLETE_DEX, FLAG_TEMP_2
 
@@ -222,6 +223,17 @@ PalletTown_ProfessorOaksLab_ChooseStarterScene::
 	waitmovement 0
 	msgbox PalletTown_ProfessorOaksLab_Text_RivalNoFairWhatAboutMe
 	msgbox PalletTown_ProfessorOaksLab_Text_OakBePatientRival
+	playfanfare MUS_OBTAIN_ITEM
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	message PalletTown_ProfessorOaksLab_Text_ReceivedRunningShoesFromAide
+	waitmessage
+	waitfanfare
+	msgbox PalletTown_ProfessorOaksLab_Text_ReceivedRunningShoesFromAide2
+	special DisableMsgBoxWalkaway
+	signmsg
+	closemessage
+	setflag FLAG_SYS_B_DASH
+	msgbox PalletTown_ProfessorOaksLab_Text_PressB
 	setvar VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 2
 	releaseall
 	end
@@ -657,7 +669,7 @@ PalletTown_ProfessorOaksLab_EventScript_ReceiveDexScene::
 	special SetUnlockedPokedexFlags
 	setvar VAR_MAP_SCENE_POKEMON_CENTER_TEALA, 1
 	msgbox PalletTown_ProfessorOaksLab_Text_OakCatchMonsForDataTakeThese
-	giveitem_msg PalletTown_ProfessorOaksLab_Text_ReceivedFivePokeBalls, ITEM_POKE_BALL, 5
+	giveitem_msg PalletTown_ProfessorOaksLab_Text_ReceivedFivePokeBalls, ITEM_POKE_BALL, 10
 	msgbox PalletTown_ProfessorOaksLab_Text_OakExplainCatching
 	famechecker FAMECHECKER_OAK, 1
 	msgbox PalletTown_ProfessorOaksLab_Text_OakCompleteMonGuideWasMyDream
@@ -930,7 +942,7 @@ PalletTown_ProfessorOaksLab_EventScript_PlayerOutOfBalls::
 
 PalletTown_ProfessorOaksLab_EventScript_GivePlayerMoreBalls::
 	msgbox PalletTown_ProfessorOaksLab_Text_OakAddedNothingToPokedex
-	giveitem_msg PalletTown_ProfessorOaksLab_Text_ReceivedFivePokeBalls, ITEM_POKE_BALL, 5
+	giveitem_msg PalletTown_ProfessorOaksLab_Text_ReceivedFivePokeBalls, ITEM_POKE_BALL, 10
 	setflag FLAG_GOT_POKEBALLS_FROM_OAK_AFTER_22_RIVAL
 	release
 	end
@@ -1069,6 +1081,7 @@ PalletTown_ProfessorOaksLab_EventScript_BulbasaurBall::
 	faceplayer
 	setvar PLAYER_STARTER_NUM, 0
 	setvar PLAYER_STARTER_SPECIES, SPECIES_BULBASAUR
+	setvar PLAYER_STARTER_NATURE, NATURE_MODEST
 	setvar RIVAL_STARTER_SPECIES, SPECIES_CHARMANDER
 	setvar RIVAL_STARTER_ID, LOCALID_CHARMANDER_BALL
 	goto_if_ge VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 3, PalletTown_ProfessorOaksLab_EventScript_LastPokeBall
@@ -1117,7 +1130,7 @@ PalletTown_ProfessorOaksLab_EventScript_ChoseStarter::
 	call EventScript_RestorePrevTextColor
 	setflag FLAG_SYS_POKEMON_GET
 	setflag FLAG_PALLET_LADY_NOT_BLOCKING_SIGN
-	givemon PLAYER_STARTER_SPECIES, 5
+	givemon PLAYER_STARTER_SPECIES, 5, nature=PLAYER_STARTER_NATURE, hpIv=31, atkIv=31, defIv=31, speedIv=31, spAtkIv=31, spDefIv=31
 	copyvar VAR_STARTER_MON, PLAYER_STARTER_NUM
 	bufferspeciesname STR_VAR_1, PLAYER_STARTER_SPECIES
 	message PalletTown_ProfessorOaksLab_Text_ReceivedMonFromOak
@@ -1212,6 +1225,7 @@ PalletTown_ProfessorOaksLab_EventScript_SquirtleBall::
 	faceplayer
 	setvar PLAYER_STARTER_NUM, 1
 	setvar PLAYER_STARTER_SPECIES, SPECIES_SQUIRTLE
+	setvar PLAYER_STARTER_NATURE, NATURE_MODEST
 	setvar RIVAL_STARTER_SPECIES, SPECIES_BULBASAUR
 	setvar RIVAL_STARTER_ID, LOCALID_BULBASAUR_BALL
 	goto_if_ge VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 3, PalletTown_ProfessorOaksLab_EventScript_LastPokeBall
@@ -1225,6 +1239,7 @@ PalletTown_ProfessorOaksLab_EventScript_CharmanderBall::
 	faceplayer
 	setvar PLAYER_STARTER_NUM, 2
 	setvar PLAYER_STARTER_SPECIES, SPECIES_CHARMANDER
+	setvar PLAYER_STARTER_NATURE, NATURE_MODEST
 	setvar RIVAL_STARTER_SPECIES, SPECIES_SQUIRTLE
 	setvar RIVAL_STARTER_ID, LOCALID_SQUIRTLE_BALL
 	goto_if_ge VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 3, PalletTown_ProfessorOaksLab_EventScript_LastPokeBall
@@ -1299,7 +1314,7 @@ PalletTown_ProfessorOaksLab_EventScript_RightSignAlt::
 	end
 
 PalletTown_ProfessorOaksLab_Text_RivalGrampsIsntAround::
-	.string "{RIVAL}: What, it's only {PLAYER}?\n"
+	.string "{RIVAL}: What, it's just you?\n"
 	.string "Gramps isn't around.$"
 
 PalletTown_ProfessorOaksLab_Text_RivalFedUpWithWaiting::
@@ -1401,26 +1416,29 @@ PalletTown_ProfessorOaksLab_Text_OakHeyDontGoAwayYet::
 	.string "Don't go away yet!$"
 
 PalletTown_ProfessorOaksLab_Text_OakChoosingCharmander::
-	.string "Ah! CHARMANDER is your choice.\n"
-	.string "You should raise it patiently.\p"
-	.string "So, {PLAYER}, you're claiming the\n"
-	.string "FIRE POKéMON CHARMANDER?$"
+    .string "Ah! That's a CHARMANDER.\p"
+    .string "It'll be easy to train in the FOREST,\n"
+    .string "but will be weak in nearby GYMS.\p"
+    .string "So, {PLAYER}, you're claiming the\n"
+    .string "FIRE POKéMON CHARMANDER?$"
 
 PalletTown_ProfessorOaksLab_Text_OakChoosingSquirtle::
-	.string "Hm! SQUIRTLE is your choice.\n"
-	.string "It's one worth raising.\p"
-	.string "So, {PLAYER}, you've decided on the\n"
-	.string "WATER POKéMON SQUIRTLE?$"
+    .string "Oh! That's a SQUIRTLE.\p"
+    .string "It can train easily at MT. MOON,\n"
+    .string "and will be strong in your first GYM.\p"
+    .string "So, {PLAYER}, you've decided on the\n"
+    .string "WATER POKéMON SQUIRTLE?$"
 
 PalletTown_ProfessorOaksLab_Text_OakChoosingBulbasaur::
-	.string "I see! BULBASAUR is your choice.\n"
-	.string "It's very easy to raise.\p"
-	.string "So, {PLAYER}, you want to go with\n"
-	.string "the GRASS POKéMON BULBASAUR?$"
+    .string "Mhmm! That's a BULBASAUR.\p"
+    .string "Training it nearby won't be great, but\n"
+    .string "it'll be strong in the first 3 GYMS.\p"
+    .string "So, {PLAYER}, you want to go with\n"
+    .string "the GRASS POKéMON BULBASAUR?$"
 
 PalletTown_ProfessorOaksLab_Text_OakThisMonIsEnergetic::
-	.string "This POKéMON is really quite\n"
-	.string "energetic!$"
+    .string "This POKéMON seems quite\n"
+    .string "energetic!$"
 
 PalletTown_ProfessorOaksLab_Text_ReceivedMonFromOak::
 	.string "{PLAYER} received the {STR_VAR_1}\n"
@@ -1484,7 +1502,7 @@ PalletTown_ProfessorOaksLab_Text_OakCatchMonsForDataTakeThese::
 	.string "catching wild POKéMON.$"
 
 PalletTown_ProfessorOaksLab_Text_ReceivedFivePokeBalls::
-	.string "{PLAYER} received five POKé BALLS.$"
+	.string "{PLAYER} received ten POKé BALLS.$"
 
 PalletTown_ProfessorOaksLab_Text_OakExplainCatching::
 	.string "When a wild POKéMON appears,\n"
@@ -1499,8 +1517,8 @@ PalletTown_ProfessorOaksLab_Text_OakCompleteMonGuideWasMyDream::
 	.string "To make a complete guide on all\n"
 	.string "the POKéMON in the world…\p"
 	.string "That was my dream!\p"
-	.string "But, I'm too old.\n"
-	.string "I can't get the job done.\p"
+	.string "But at my age, with my reasearch\n"
+    .string "obligations, I just don't have time.\p"
 	.string "So, I want you two to fulfill my\n"
 	.string "dream for me.\p"
 	.string "Get moving, you two.\p"
@@ -1655,3 +1673,14 @@ PalletTown_ProfessorOaksLab_Text_RivalIllCompleteThePokedex::
 	.string "ONE ISLAND first…\p"
 	.string "Anyways, I'm outta here!$"
 
+PalletTown_ProfessorOaksLab_Text_ReceivedRunningShoesFromAide::
+    .string "{PLAYER} received the\n"    
+    .string "RUNNING SHOES from PROF. OAK.$"
+
+PalletTown_ProfessorOaksLab_Text_ReceivedRunningShoesFromAide2::
+    .string "{PLAYER} put on the\n"
+    .string "RUNNING SHOES.$"
+
+PalletTown_ProfessorOaksLab_Text_PressB::
+    .string "With the RUNNING SHOES,\n"
+    .string "press the B Button to run!$"

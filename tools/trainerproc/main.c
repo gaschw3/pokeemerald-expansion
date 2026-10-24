@@ -2070,7 +2070,7 @@ static void fprint_trainers(const char *output_path, FILE *f, struct Parsed *par
             {
                 fprintf(f, "#line %d\n", pokemon->ball_line);
                 fprintf(f, "            .ball = ");
-                fprint_constant(f, "BALL", pokemon->ball);
+                fprint_constant(f, "ITEM", pokemon->ball);
                 fprintf(f, ",\n");
             }
             else

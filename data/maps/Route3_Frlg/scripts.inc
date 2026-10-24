@@ -105,6 +105,16 @@ Route3_Text_RobinIntro::
 Route3_Text_RobinDefeat::
 	.string "That's it?$"
 
+Route3_Text_RobinGiveDreamBall::
+	.string "You received a DREAM BALL!$"
+
+Route3_Text_RobinExplainDreamBall::
+	.string "The DREAM BALL is used to catch\n"
+	.string "POKéMON in their dreams.$"
+
+Route3_Text_ReceivedTwoDreamBalls::
+	.string "You received two DREAM BALLS!$"
+
 Route3_Text_RobinPostBattle::
 	.string "ROUTE 4 is at the foot of\n"
 	.string "MT. MOON.$"

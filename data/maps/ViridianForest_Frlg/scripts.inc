@@ -38,6 +38,11 @@ ViridianForest_EventScript_ExitSign::
 	msgbox ViridianForest_Text_LeavingViridianForest, MSGBOX_SIGN
 	end
 
+ViridianForest_EventScript_Joanie::
+	trainerbattle_single TRAINER_LASS_JOANIE, ViridianForest_Text_JoanieIntro, ViridianForest_Text_JoanieDefeat
+	msgbox ViridianForest_Text_JoaniePostBattle, MSGBOX_AUTOCLOSE
+	end
+
 ViridianForest_EventScript_Rick::
 	trainerbattle_single TRAINER_BUG_CATCHER_RICK, ViridianForest_Text_RickIntro, ViridianForest_Text_RickDefeat
 	msgbox ViridianForest_Text_RickPostBattle, MSGBOX_AUTOCLOSE
@@ -54,7 +59,7 @@ ViridianForest_EventScript_Sammy::
 	end
 
 ViridianForest_EventScript_Anthony::
-	trainerbattle_single TRAINER_BUG_CATCHER_ANTHONY, ViridianForest_Text_AnthonyIntro, ViridianForest_Text_AnthonyDefeat
+	trainerbattle_single TRAINER_ACE_ANTHONY, ViridianForest_Text_AnthonyIntro, ViridianForest_Text_AnthonyDefeat
 	msgbox ViridianForest_Text_AnthonyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -109,15 +114,17 @@ ViridianForest_Text_SammyPostBattle::
 	.string "dropped. Can you help me?$"
 
 ViridianForest_Text_AnthonyIntro::
-	.string "I might be little, but I won't like\n"
-	.string "it if you go easy on me!$"
+    .string "Bug POKéMON can be strong in\n"
+    .string "the right team!\p"
+    .string "I'll show you.$"
 
 ViridianForest_Text_AnthonyDefeat::
-	.string "Oh, boo.\n"
-	.string "Nothing went right.$"
+    .string "Oh, boo.\n"
+    .string "I still can't win.$"
 
 ViridianForest_Text_AnthonyPostBattle::
-	.string "I lost some of my allowance…$"
+    .string "Maybe I need some POKéMON\n"
+    .string "from outside the forest…$"
 
 ViridianForest_Text_CharlieIntro::
 	.string "Did you know that POKéMON evolve?$"
@@ -127,8 +134,24 @@ ViridianForest_Text_CharlieDefeat::
 	.string "I lost!$"
 
 ViridianForest_Text_CharliePostBattle::
-	.string "BUG POKéMON evolve quickly.\n"
-	.string "They're a lot of fun!$"
+    .string "I raised my METAPOD from a\n"
+    .string "CATERPIE, so it can still\p"
+    .string "use TACKLE.$"
+
+ViridianForest_Text_JoanieIntro::
+	.string "Hi, do you have a PIKACHU?$"
+
+ViridianForest_Text_JoanieDefeat::
+	.string "Oh no, really?$"
+
+ViridianForest_Text_JoaniePostBattle::
+	.string "I looked for ages, but I never\n"
+	.string "found a PIKACHU here!\p"
+	.string "I did catch a BULBASAUR,\n"
+	.string "though.\p"
+	.string "I battled an ACE TRAINER here\n"
+	.string "and he told me finding either\p"
+	.string "one can be tricky!$"
 
 ViridianForest_Text_RanOutOfPokeBalls::
 	.string "I was throwing POKé BALLS to\n"

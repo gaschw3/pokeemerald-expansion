@@ -1,0 +1,21 @@
+raw `
+RockTunnel_NorthEntrance_Frlg_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, RockTunnel_NorthEntrance_OnTransition
+	.byte 0
+
+RockTunnel_NorthEntrance_OnTransition::
+	setworldmapflag FLAG_WORLD_MAP_ROCK_TUNNEL_1F
+	end
+
+RockTunnel_NorthEntrance_EventScript_DarknessSign::
+	msgbox RockTunnel_Entrance_Text_RouteSign, MSGBOX_SIGN
+	end
+
+RockTunnel_Entrance_Text_RouteSign::
+    .string "ROCK TUNNEL\n"
+    .string "CERULEAN CITY <-> LAVENDER TOWN\p"
+    .string "Protected dark biome.\p"
+    .string "Personal use of FLASH\n"
+    .string "may be required.$"
+
+`

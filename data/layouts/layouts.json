@@ -6270,8 +6270,8 @@
     {
       "id": "LAYOUT_PEWTER_CITY",
       "name": "PewterCity_Layout",
-      "width": 48,
-      "height": 40,
+      "width": 52,
+      "height": 44,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General_Frlg",
@@ -6518,7 +6518,7 @@
       "id": "LAYOUT_ROUTE11",
       "name": "Route11_Layout",
       "width": 72,
-      "height": 20,
+      "height": 23,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General_Frlg",
@@ -6596,7 +6596,7 @@
       "id": "LAYOUT_ROUTE17",
       "name": "Route17_Layout",
       "width": 24,
-      "height": 160,
+      "height": 167,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General_Frlg",
@@ -7230,6 +7230,19 @@
       "layout_version": "frlg"
     },
     {
+      "id": "LAYOUT_ROCK_TUNNEL_NORTH_ENTRANCE",
+      "name": "RockTunnel_NorthEntrance_Layout",
+      "width": 32,
+      "height": 24,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_RockTunnel",
+      "border_filepath": "data/layouts/RockTunnel_NorthEntrance_Frlg/border.bin",
+      "blockdata_filepath": "data/layouts/RockTunnel_NorthEntrance_Frlg/map.bin",
+      "layout_version": "frlg"
+    },
+    {
       "id": "LAYOUT_ROCK_TUNNEL_1F",
       "name": "RockTunnel_1F_Layout",
       "width": 48,
@@ -7253,6 +7266,19 @@
       "secondary_tileset": "gTileset_RockTunnel",
       "border_filepath": "data/layouts/RockTunnel_B1F_Frlg/border.bin",
       "blockdata_filepath": "data/layouts/RockTunnel_B1F_Frlg/map.bin",
+      "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_ROCK_TUNNEL_B2F",
+      "name": "RockTunnel_B2F_Layout",
+      "width": 24,
+      "height": 20,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General_Frlg",
+      "secondary_tileset": "gTileset_SeafoamIslands",
+      "border_filepath": "data/layouts/RockTunnel_B2F_Frlg/border.bin",
+      "blockdata_filepath": "data/layouts/RockTunnel_B2F_Frlg/map.bin",
       "layout_version": "frlg"
     },
     {

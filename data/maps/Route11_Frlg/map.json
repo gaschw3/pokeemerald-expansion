@@ -3,7 +3,6 @@
   "name": "Route11_Frlg",
   "layout": "LAYOUT_ROUTE11",
   "music": "MUS_RG_ROUTE11",
-  "region": "REGION_KANTO",
   "region_map_section": "MAPSEC_ROUTE_11",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",
@@ -141,7 +140,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_1",
+      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN_2",
       "x": 57,
       "y": 16,
       "elevation": 3,
@@ -253,5 +252,6 @@
       "quantity": 1,
       "underfoot": false
     }
-  ]
+  ],
+  "region": "REGION_KANTO"
 }

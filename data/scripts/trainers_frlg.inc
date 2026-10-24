@@ -82,21 +82,6 @@ Route3_EventScript_SallyRematch::
 	msgbox Route3_Text_SallyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-Route3_EventScript_Robin::
-	trainerbattle_single TRAINER_ACE_ROBIN, Route3_Text_RobinIntro, Route3_Text_RobinDefeat
-	msgbox  Route3_Text_RobinGiveDreamBall
-	giveitem_msg Route3_Text_ReceivedTwoDreamBalls, ITEM_DREAM_BALL, 2
-	msgbox  Route3_Text_RobinExplainDreamBall
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route3_EventScript_RobinRematch
-	msgbox Route3_Text_RobinPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route3_EventScript_RobinRematch::
-	trainerbattle_rematch TRAINER_ACE_ROBIN, Route3_Text_RobinRematchIntro, Route3_Text_RobinDefeat
-	msgbox Route3_Text_RobinPostBattle, MSGBOX_AUTOCLOSE
-	end
-
 Route4_EventScript_Crissy::
 	trainerbattle_single TRAINER_LASS_CRISSY, Route4_Text_CrissyIntro, Route4_Text_CrissyDefeat
 	specialvar VAR_RESULT, ShouldTryRematchBattle

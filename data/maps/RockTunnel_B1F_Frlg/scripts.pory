@@ -44,13 +44,13 @@ RockTunnel_B1F_EventScript_Winston::
 
 RockTunnel_B1F_Text_SofiaIntro::
 	.string "Do you know how you can avoid\n"
-	.string "getting lost in the mountains?\p"
-	.string "You can bend twigs as trail\n"
+	.string "getting lost in the cave?\p"
+	.string "You can leave a trail of stone\n"
 	.string "markers.$"
 
 RockTunnel_B1F_Text_SofiaDefeat::
 	.string "Ohhh!\n"
-	.string "I did my best!$"
+	.string "I can't find my last stone!$"
 
 RockTunnel_B1F_Text_SofiaPostBattle::
 	.string "I want to go home!$"
@@ -89,7 +89,7 @@ RockTunnel_B1F_Text_SteveDefeat::
 RockTunnel_B1F_Text_StevePostBattle::
 	.string "POKéMON cosplay is dressing up as\n"
 	.string "POKéMON for fun.\p"
-	.string "CLEFAIRY is a favorite.$"
+	.string "CLEFAIRY is my favorite.$"
 
 RockTunnel_B1F_Text_AllenIntro::
 	.string "My POKéMON techniques will leave\n"
@@ -138,3 +138,6 @@ RockTunnel_B1F_Text_WinstonPostBattle::
 	.string "I'll go home to draw.$"
 
 `
+script RockTunnel_B1F_EventScript_IceSign {
+	msgbox("RANGER NOTICE\pCave becomes extremely cold\n beyond this point.\pProceed with caution!", MSGBOX_SIGN)
+}

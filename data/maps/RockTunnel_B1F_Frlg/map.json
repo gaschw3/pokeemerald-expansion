@@ -408,9 +408,25 @@
       "elevation": 3,
       "dest_map": "MAP_ROCK_TUNNEL_1F",
       "dest_warp_id": "4"
+    },
+    {
+      "x": 24,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_ROCK_TUNNEL_B2F",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],
-  "bg_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 21,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "NULL"
+    }
+  ],
   "region": "REGION_KANTO"
 }

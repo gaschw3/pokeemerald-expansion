@@ -91,9 +91,9 @@ RockTunnel_B1F_Text_SofiaIntro::
 # 46 "data/maps/RockTunnel_B1F_Frlg/scripts.pory"
 	.string "Do you know how you can avoid\n"
 # 47 "data/maps/RockTunnel_B1F_Frlg/scripts.pory"
-	.string "getting lost in the mountains?\p"
+	.string "getting lost in the cave?\p"
 # 48 "data/maps/RockTunnel_B1F_Frlg/scripts.pory"
-	.string "You can bend twigs as trail\n"
+	.string "You can leave a trail of stone\n"
 # 49 "data/maps/RockTunnel_B1F_Frlg/scripts.pory"
 	.string "markers.$"
 # 50 "data/maps/RockTunnel_B1F_Frlg/scripts.pory"
@@ -103,7 +103,7 @@ RockTunnel_B1F_Text_SofiaDefeat::
 # 52 "data/maps/RockTunnel_B1F_Frlg/scripts.pory"
 	.string "Ohhh!\n"
 # 53 "data/maps/RockTunnel_B1F_Frlg/scripts.pory"
-	.string "I did my best!$"
+	.string "I can't find my last stone!$"
 # 54 "data/maps/RockTunnel_B1F_Frlg/scripts.pory"
 
 # 55 "data/maps/RockTunnel_B1F_Frlg/scripts.pory"
@@ -181,7 +181,7 @@ RockTunnel_B1F_Text_StevePostBattle::
 # 91 "data/maps/RockTunnel_B1F_Frlg/scripts.pory"
 	.string "POKéMON for fun.\p"
 # 92 "data/maps/RockTunnel_B1F_Frlg/scripts.pory"
-	.string "CLEFAIRY is a favorite.$"
+	.string "CLEFAIRY is my favorite.$"
 # 93 "data/maps/RockTunnel_B1F_Frlg/scripts.pory"
 
 # 94 "data/maps/RockTunnel_B1F_Frlg/scripts.pory"
@@ -274,3 +274,13 @@ RockTunnel_B1F_Text_WinstonPostBattle::
 	.string "I'm an artist, not a fighter.\n"
 # 138 "data/maps/RockTunnel_B1F_Frlg/scripts.pory"
 	.string "I'll go home to draw.$"
+
+RockTunnel_B1F_EventScript_IceSign::
+# 142 "data/maps/RockTunnel_B1F_Frlg/scripts.pory"
+	msgbox RockTunnel_B1F_EventScript_IceSign_Text_0, MSGBOX_SIGN
+	return
+
+
+RockTunnel_B1F_EventScript_IceSign_Text_0:
+# 142 "data/maps/RockTunnel_B1F_Frlg/scripts.pory"
+	.string "RANGER NOTICE\pCave becomes extremely cold\n beyond this point.\pProceed with caution!$"

@@ -6613,7 +6613,7 @@
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_CeladonCity",
+      "secondary_tileset": "gTileset_Snowy",
       "border_filepath": "data/layouts/Route18_Frlg/border.bin",
       "blockdata_filepath": "data/layouts/Route18_Frlg/map.bin",
       "layout_version": "frlg"

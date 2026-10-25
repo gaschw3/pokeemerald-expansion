@@ -143,7 +143,7 @@
 #define METATILE_Cave_ShoalCave_DirtPile_Small           0x35A
 
 // gTileset_CeladonCity
-#define METATILE_CeladonCity_CyclingRoad_Grass  0x352
+#define METATILE_CeladonCity_CyclingRoad_Grass  0x356
 #define METATILE_CeladonCity_CyclingRoad_Mowed  0x33E
 #define METATILE_CeladonCity_DeptStoreDoor      0x294
 

@@ -52,7 +52,7 @@
       "dest_warp_id": "1"
     },
     {
-      "x": 26,
+      "x": 27,
       "y": 36,
       "elevation": 3,
       "dest_map": "MAP_MT_MOON_B2F",
@@ -78,7 +78,7 @@
     {
       "type": "hidden_item",
       "x": 46,
-      "y": 2,
+      "y": 3,
       "elevation": 0,
       "item": "ITEM_TINY_MUSHROOM",
       "flag": "FLAG_HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM",
@@ -87,8 +87,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 26,
-      "y": 2,
+      "x": 16,
+      "y": 3,
       "elevation": 0,
       "item": "ITEM_TINY_MUSHROOM",
       "flag": "FLAG_HIDDEN_ITEM_MT_MOON_B1F_TINY_MUSHROOM_2",
@@ -97,7 +97,7 @@
     },
     {
       "type": "hidden_item",
-      "x": 39,
+      "x": 41,
       "y": 34,
       "elevation": 0,
       "item": "ITEM_TINY_MUSHROOM",

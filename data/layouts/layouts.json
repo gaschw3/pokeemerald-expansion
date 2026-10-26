@@ -6574,7 +6574,7 @@
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General_Frlg",
-      "secondary_tileset": "gTileset_FuchsiaCity",
+      "secondary_tileset": "gTileset_BerryForest",
       "border_filepath": "data/layouts/Route15_Frlg/border.bin",
       "blockdata_filepath": "data/layouts/Route15_Frlg/map.bin",
       "layout_version": "frlg"
@@ -6686,8 +6686,8 @@
     {
       "id": "LAYOUT_ROUTE24",
       "name": "Route24_Layout",
-      "width": 24,
-      "height": 40,
+      "width": 37,
+      "height": 46,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General_Frlg",
@@ -6700,7 +6700,7 @@
       "id": "LAYOUT_ROUTE25",
       "name": "Route25_Layout",
       "width": 72,
-      "height": 20,
+      "height": 29,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General_Frlg",

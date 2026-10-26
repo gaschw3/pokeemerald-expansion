@@ -21,7 +21,7 @@
     },
     {
       "map": "MAP_CERULEAN_CITY",
-      "offset": -10,
+      "offset": -9,
       "direction": "right"
     }
   ],
@@ -162,8 +162,8 @@
     },
     {
       "type": "hidden_item",
-      "x": 43,
-      "y": 2,
+      "x": 44,
+      "y": 3,
       "elevation": 3,
       "item": "ITEM_GREAT_BALL",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE4_GREAT_BALL",
@@ -173,7 +173,7 @@
     {
       "type": "hidden_item",
       "x": 5,
-      "y": 4,
+      "y": 5,
       "elevation": 3,
       "item": "ITEM_PERSIM_BERRY",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE4_PERSIM_BERRY",

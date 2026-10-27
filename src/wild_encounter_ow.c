@@ -37,7 +37,7 @@
 #define sOverworldEncounterLevel        trainerRange_berryTreeId
 #define sOverworldEncounterAge          playerCopyableMovement
 #define sOverworldEncounterCategory     warpArrowSpriteId
-#define OWE_MAX_ROAMERS                 UINT8_MAX - 3
+#define OWE_MAX_ROAMERS                 5
 
 #define OWE_FLAG_BIT                    (1 << 7)
 #define OWE_SAVED_MOVEMENT_STATE_FLAG   OWE_FLAG_BIT

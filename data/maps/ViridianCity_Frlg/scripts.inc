@@ -716,3 +716,53 @@ ViridianCity_Text_GymSign::
 ViridianCity_Text_GymDoorsAreLocked::
 # 359 "data/maps/ViridianCity_Frlg/scripts.pory"
 	.string "VIRIDIAN GYM's doors are locked…$"
+
+ViridianCity_Custom_PokemonCry::
+# 364 "data/maps/ViridianCity_Frlg/scripts.pory"
+	lock
+# 365 "data/maps/ViridianCity_Frlg/scripts.pory"
+	getoverworldwildencounterspecies VAR_LAST_TALKED
+# 366 "data/maps/ViridianCity_Frlg/scripts.pory"
+	playmoncry VAR_LAST_TALKED, 0
+# 367 "data/maps/ViridianCity_Frlg/scripts.pory"
+	waitmoncry
+# 368 "data/maps/ViridianCity_Frlg/scripts.pory"
+	release
+	end
+
+
+ViridianCity_Custom_NidorinoTrainer::
+# 373 "data/maps/ViridianCity_Frlg/scripts.pory"
+	lock
+# 374 "data/maps/ViridianCity_Frlg/scripts.pory"
+	faceplayer
+# 375 "data/maps/ViridianCity_Frlg/scripts.pory"
+	msgbox ViridianCity_Custom_NidorinoTrainer_Text_0, MSGBOX_NPC
+# 376 "data/maps/ViridianCity_Frlg/scripts.pory"
+	applymovement LOCALID_NIDO_TRAINER, Common_Movement_FaceOriginalDirection
+# 377 "data/maps/ViridianCity_Frlg/scripts.pory"
+	release
+	end
+
+
+ViridianCity_Custom_GengarTrainer::
+# 382 "data/maps/ViridianCity_Frlg/scripts.pory"
+	lock
+# 383 "data/maps/ViridianCity_Frlg/scripts.pory"
+	faceplayer
+# 384 "data/maps/ViridianCity_Frlg/scripts.pory"
+	msgbox ViridianCity_Custom_GengarTrainer_Text_0, MSGBOX_NPC
+# 385 "data/maps/ViridianCity_Frlg/scripts.pory"
+	applymovement LOCALID_GENGAR_TRAINER, Common_Movement_FaceOriginalDirection
+# 386 "data/maps/ViridianCity_Frlg/scripts.pory"
+	release
+	end
+
+
+ViridianCity_Custom_NidorinoTrainer_Text_0:
+# 375 "data/maps/ViridianCity_Frlg/scripts.pory"
+	.string "Look out NIDORINO!$"
+
+ViridianCity_Custom_GengarTrainer_Text_0:
+# 384 "data/maps/ViridianCity_Frlg/scripts.pory"
+	.string "GENGAR, use SHADOW CLAW!$"

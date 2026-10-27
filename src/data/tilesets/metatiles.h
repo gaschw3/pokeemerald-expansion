@@ -410,4 +410,4 @@ const u16 gMetatileAttributes_HallOfFame[] = INCBIN_U16("data/tilesets/secondary
 #endif // IS_FRLG
 
 const u16 gMetatiles_Snowy[] = INCBIN_U16("data/tilesets/secondary/snowy/metatiles.bin");
-const u32 gMetatileAttributes_Snowy[] = INCBIN_U32("data/tilesets/secondary/snowy/metatile_attributes.bin");
+const u16 gMetatileAttributes_Snowy[] = INCBIN_U16("data/tilesets/secondary/snowy/metatile_attributes.bin");

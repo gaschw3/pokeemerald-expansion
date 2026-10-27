@@ -359,3 +359,30 @@ ViridianCity_Text_GymDoorsAreLocked::
 	.string "VIRIDIAN GYM's doors are locked…$"
 
 `
+
+script ViridianCity_Custom_PokemonCry {
+	lock
+    getoverworldwildencounterspecies(VAR_LAST_TALKED)
+    playmoncry(VAR_LAST_TALKED, 0)
+    waitmoncry
+    release
+	end
+}
+
+script ViridianCity_Custom_NidorinoTrainer {
+	lock
+	faceplayer
+	msgbox("Look out NIDORINO!", MSGBOX_NPC)
+	applymovement(LOCALID_NIDO_TRAINER, Common_Movement_FaceOriginalDirection)
+	release
+	end
+}
+
+script ViridianCity_Custom_GengarTrainer {
+	lock
+	faceplayer
+	msgbox("GENGAR, use SHADOW CLAW!", MSGBOX_NPC)
+	applymovement(LOCALID_GENGAR_TRAINER, Common_Movement_FaceOriginalDirection)
+	release
+	end
+}

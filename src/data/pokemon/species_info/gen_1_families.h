@@ -2305,12 +2305,12 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .speciesName = _("Rattata"),
         .cryId = CRY_RATTATA,
         .natDexNum = NATIONAL_DEX_RATTATA,
-        .categoryName = _("Mouse"),
+        .categoryName = _("Evil Mouse"),
         .height = 3,
         .weight = 38,
         .description = COMPOUND_STRING(
-            "With its incisors, it gnaws through doors\n"
-            "and infiltrates people's homes.\n"
+            "Darker Rattata come out at night\n"
+            "and infiltrate people's homes.\n"
             "Then, with a twitch of its whiskers,\n"
             "it steals whatever food it finds."),
         .pokemonScale = 481,
@@ -2386,7 +2386,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .speciesName = _("Raticate"),
         .cryId = CRY_RATICATE,
         .natDexNum = NATIONAL_DEX_RATICATE,
-        .categoryName = _("Mouse"),
+        .categoryName = _("Evil Mouse"),
         .height = 7,
         .weight = 255,
         .description = gRaticateAlolaPokedexText,

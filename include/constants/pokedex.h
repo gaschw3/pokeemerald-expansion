@@ -1338,14 +1338,22 @@ enum HoennDexOrder
     F(CATERPIE) \
     F(METAPOD) \
     F(BUTTERFREE) \
+    F(LEDYBA) \
+    F(LEDIAN) \
     F(WEEDLE) \
     F(KAKUNA) \
     F(BEEDRILL) \
+    F(SPINARAK) \
+    F(ARIADOS) \
     F(PIDGEY) \
     F(PIDGEOTTO) \
     F(PIDGEOT) \
+    F(HOOTHOOT) \
+    F(NOCTOWL) \
     F(RATTATA) \
     F(RATICATE) \
+    F(SENTRET) \
+    F(FURRET) \
     F(SPEAROW) \
     F(FEAROW) \
     F(EKANS) \

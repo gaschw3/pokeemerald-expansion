@@ -32,7 +32,7 @@
 #define WE_OWE_FEEBAS_SPOTS                     TRUE    // If TRUE, any spot that could result in a Feebas fishing encounter can spawn a Feebas OWE.
 #define WE_OWE_DESPAWN_SOUND                    FALSE   // If TRUE, plays SE_FLEE when an OWE despawns.
 #define WE_OWE_APPROACH_FOR_BATTLE              TRUE    // If TRUE, OWEs will take steps to be right next to the player before the battle starts.
-#define WE_OWE_PREVENT_SHINY_DESPAWN            FALSE   // If TRUE, shiny OWEs will not be despawned when off-screen if on the same map as the player, or be replaced if WE_OWE_SPAWN_REPLACEMENT is TRUE.
+#define WE_OWE_PREVENT_SHINY_DESPAWN            TRUE   // If TRUE, shiny OWEs will not be despawned when off-screen if on the same map as the player, or be replaced if WE_OWE_SPAWN_REPLACEMENT is TRUE.
 #define WE_OWE_PREVENT_FEEBAS_DESPAWN           FALSE   // If TRUE, Feebas OWEs spawned from special Feebas fishing spots (when WE_OWE_FEEBAS_SPOTS is TRUE) will not be despawned when off-screen if on the same map as the player, or be replaced if WE_OWE_SPAWN_REPLACEMENT is TRUE.
 #define WE_OWE_PREVENT_SPECIAL_MOVEMENT_DESPAWN TRUE    // If TRUE, shiny OWEs (if WE_OWE_PREVENT_SHINY_DESPAWN is TRUE) or Feebas OWEs (if WE_OWE_PREVENT_FEEBAS_DESPAWN is TRUE) will not be despawned by their movement type (for example, OWE_DESPAWN_ON_NOTICE).
 #define WE_OWE_DESPAWN_ON_ENTER_TOWN            TRUE    // If TRUE, despawns all OWEs upon entering a city (MAP_TYPE_CITY) or town (MAP_TYPE_TOWN).

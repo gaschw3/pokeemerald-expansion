@@ -2,19 +2,6 @@ raw `
 PalletTown_PlayersHouse_1F_Frlg_MapScripts::
 	.byte 0
 
-PalletTown_PlayersHouse_1F_EventScript_Mom::
-	lock
-	faceplayer
-	goto_if_set FLAG_BEAT_RIVAL_IN_OAKS_LAB, PalletTown_PlayersHouse_1F_EventScript_MomHeal
-	checkplayergender
-	call_if_eq VAR_RESULT, MALE, PalletTown_PlayersHouse_1F_EventScript_MomOakLookingForYouMale
-	call_if_eq VAR_RESULT, FEMALE, PalletTown_PlayersHouse_1F_EventScript_MomOakLookingForYouFemale
-	closemessage
-	applymovement LOCALID_PLAYERS_HOUSE_1F_MOM, Common_Movement_FaceOriginalDirection
-	waitmovement 0
-	release
-	end
-
 PalletTown_PlayersHouse_1F_EventScript_MomOakLookingForYouMale::
 	msgbox PalletTown_PlayersHouse_1F_Text_AllBoysLeaveOakLookingForYou
 	return
@@ -22,14 +9,6 @@ PalletTown_PlayersHouse_1F_EventScript_MomOakLookingForYouMale::
 PalletTown_PlayersHouse_1F_EventScript_MomOakLookingForYouFemale::
 	msgbox PalletTown_PlayersHouse_1F_Text_AllGirlsLeaveOakLookingForYou
 	return
-
-PalletTown_PlayersHouse_1F_EventScript_MomHeal::
-	msgbox PalletTown_PlayersHouse_1F_Text_YouShouldTakeQuickRest
-	closemessage
-	call Common_EventScript_OutOfCenterPartyHeal
-	msgbox PalletTown_PlayersHouse_1F_Text_LookingGreatTakeCare
-	release
-	end
 
 @ Displays special text if interacted with from side or back (which are normally inaccessible)
 PalletTown_PlayersHouse_1F_EventScript_TV::
@@ -55,18 +34,18 @@ PalletTown_PlayersHouse_1F_EventScript_TVScreenFemale::
 	return
 
 PalletTown_PlayersHouse_1F_Text_AllBoysLeaveOakLookingForYou::
-	.string "MOM: …Right.\n"
+	.string "Hi, honey.\n"
 	.string "All boys leave home someday.\l"
 	.string "It said so on TV.\p"
-	.string "Oh, yes. PROF. OAK, next door, was\n"
-	.string "looking for you.$"
+	.string "PROF. OAK, next door, was looking\n"
+	.string "for you, sto select your first POKéMON!$"
 
 PalletTown_PlayersHouse_1F_Text_AllGirlsLeaveOakLookingForYou::
-	.string "MOM: …Right.\n"
-	.string "All girls dream of traveling.\l"
+	.string "Hi, honey.\n"
+	.string "All girls leave home someday.\l"
 	.string "It said so on TV.\p"
-	.string "Oh, yes. PROF. OAK, next door, was\n"
-	.string "looking for you.$"
+	.string "PROF. OAK, next door, was looking\n"
+	.string "for you, sto select your first POKéMON!$"
 
 PalletTown_PlayersHouse_1F_Text_YouShouldTakeQuickRest::
 	.string "MOM: {PLAYER}!\n"
@@ -86,9 +65,186 @@ PalletTown_PlayersHouse_1F_Text_MovieOnTVFourBoysOnRailroad::
 PalletTown_PlayersHouse_1F_Text_MovieOnTVGirlOnBrickRoad::
 	.string "There's a movie on TV.\n"
 	.string "A girl with her hair in pigtails is\l"
-	.string "walking up a brick road.\p"
+	.string "walking up a yellow brick road.\p"
 	.string "…I better go, too.$"
 
 PalletTown_PlayersHouse_1F_Text_OopsWrongSide::
 	.string "Oops, wrong side…$"
 `
+
+script PalletTown_PlayersHouse_1F_EventScript_Mom {
+	lock
+	faceplayer
+	if (!flag(FLAG_SYS_B_DASH)) {
+		call(PlayersHouse_EventScript_MomShoes)
+	}
+	if (flag(FLAG_BEAT_RIVAL_IN_OAKS_LAB)) {
+		msgbox("Hi, {PLAYER}. Welcome home.\nYou should have a quick rest.")
+		closemessage
+		call(Common_EventScript_OutOfCenterPartyHeal)
+		msgbox("You and your POKéMON are looking great.\nBe careful now. I love you.")
+		release
+		end
+	} else {
+		checkplayergender
+		switch (var(VAR_RESULT)) {
+			case MALE:
+				msgbox("All boys leave home someday.\lIt said so on TV.\pPROF. OAK was looking for you. He'll\nlet you choose your first POKéMON!$")
+			case FEMALE:
+				msgbox("All girls leave home someday.\lIt said so on TV.\pPROF. OAK was looking for you. He'll\nlet you choose your first POKéMON!$")
+		}
+	}
+	closemessage
+	applymovement(LOCALID_MOM, Common_Movement_FaceOriginalDirection)
+	waitmovement(0)
+	release
+	end
+}
+
+
+script PlayersHouse_EventScript_MomShoes {
+    lock
+    faceplayer
+    setvar(VAR_TEMP_1, 0)
+    call(PlayersHouse_EventScript_MomGiveShoes)
+    release
+    end
+}
+
+script PlayersHouse_EventScript_MomShoesTriggerLeft {
+	if (!flag(FLAG_SYS_B_DASH)) {
+		lockall
+		setvar(VAR_TEMP_1, 1)
+		call(PlayersHouse_EventScript_MomGiveShoes)
+		releaseall
+		end
+	}
+}
+
+script PlayersHouse_EventScript_MomShoesTriggerTop {
+	if (!flag(FLAG_SYS_B_DASH)) {
+		lockall
+		setvar(VAR_TEMP_1, 2)
+		call(PlayersHouse_EventScript_MomGiveShoes)
+		releaseall
+		end
+	}
+}
+
+script PlayersHouse_EventScript_MomShoesTriggerRight {
+	if (!flag(FLAG_SYS_B_DASH)) {
+		lockall
+		setvar(VAR_TEMP_1, 3)
+		call(PlayersHouse_EventScript_MomGiveShoes)
+		releaseall
+		end
+	}
+}
+
+script PlayersHouse_EventScript_MomGiveShoes {
+    textcolor(NPC_TEXT_COLOR_MALE)
+	switch (var(VAR_TEMP_1)) {
+		//face door, player left without talking to mom
+		case 1:
+			applymovement(LOCALID_MOM, Common_Movement_WalkInPlaceFasterDown)
+			waitmovement(0)
+		case 2:
+			applymovement(LOCALID_MOM, Common_Movement_WalkInPlaceFasterDown)
+			waitmovement(0)
+		case 3:
+			applymovement(LOCALID_MOM, Common_Movement_WalkInPlaceFasterDown)
+			waitmovement(0)
+	}
+    waitse
+    playse(SE_PIN)
+    applymovement(LOCALID_MOM, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    applymovement(LOCALID_MOM, Common_Movement_Delay48)
+    waitmovement(0)
+	if (var(VAR_TEMP_1) == 0) {
+		msgbox("Morning, dear!")
+	} else {
+		msgbox("Oh, sneaking off without saying goodbye?")
+	}
+	switch (var(VAR_TEMP_1)) {
+		case 1: //door left
+			closemessage
+			applymovement(LOCALID_MOM, moves(
+				walk_down * 3
+				walk_left * 5
+				face_down
+			))
+			waitmovement(0)
+			applymovement(LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp)
+			waitmovement(0)
+		case 2: //door top
+			closemessage
+			applymovement(LOCALID_MOM, moves(
+				walk_down * 3
+				walk_left * 3
+			))
+			waitmovement(0)
+			applymovement(LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight)
+			waitmovement(0)
+		case 3: //door right
+			closemessage
+			applymovement(LOCALID_MOM, moves(
+				walk_down * 3
+				walk_left * 3
+				face_down
+			))
+			waitmovement(0)
+			applymovement(LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp)
+			waitmovement(0)
+	}
+    msgbox("I know you're heading out\non your adventure today.\pSo I got you a gift!")
+    textcolor(NPC_TEXT_COLOR_NEUTRAL)
+    playfanfare(MUS_RG_OBTAIN_KEY_ITEM)
+	signmsg
+    message("{PLAYER} received the\nRUNNING SHOES from MOM.")
+    waitmessage
+    waitfanfare
+    msgbox("I've switched shoes with the\nRUNNING SHOES.")
+    special(DisableMsgBoxWalkaway)
+    msgbox("Hold the B Button to run!")
+    normalmsg
+    call(EventScript_RestorePrevTextColor)
+    msgbox("Okay. Go have your talk with\nPROFESSOR OAK!\pYou're always welcome back\nif you need a rest.\pBe careful. I love you!")
+    closemessage
+    switch (var(VAR_TEMP_1)) {
+		case 1: //door left
+			closemessage
+			applymovement(LOCALID_MOM, moves(
+				walk_right * 5
+				walk_up * 3
+				face_left
+			))
+			waitmovement(0)
+			applymovement(LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp)
+			waitmovement(0)
+		case 2: //door top
+			closemessage
+			applymovement(LOCALID_MOM, moves(
+				walk_right * 3
+				walk_up * 3
+				face_left
+			))
+			waitmovement(0)
+			applymovement(LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight)
+			waitmovement(0)
+		case 3: //door right
+			closemessage
+			applymovement(LOCALID_MOM, moves(
+				walk_right * 3
+				walk_up * 3
+				face_left
+			))
+			waitmovement(0)
+			applymovement(LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp)
+			waitmovement(0)
+	}
+    delay(30)
+    setflag(FLAG_SYS_B_DASH)
+    setvar(VAR_MAP_SCENE_MOM_SHOES, 1)
+    return
+}

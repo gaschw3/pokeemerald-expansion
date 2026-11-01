@@ -355,9 +355,9 @@ PalletTown_RivalsHouse_Text_HeardYouBattledRival::
 # 178 "data/maps/PalletTown_RivalsHouse_Frlg/scripts.pory"
 PalletTown_RivalsHouse_Text_ErrandForGrandpaThisWillHelp::
 # 179 "data/maps/PalletTown_RivalsHouse_Frlg/scripts.pory"
-	.string "Grandpa asked you to run an\n"
+	.string "Grandpa asked you to catch\n"
 # 180 "data/maps/PalletTown_RivalsHouse_Frlg/scripts.pory"
-	.string "errand?\p"
+	.string "POKéMON too?\p"
 # 181 "data/maps/PalletTown_RivalsHouse_Frlg/scripts.pory"
 	.string "Gee, that's lazy of him.\n"
 # 182 "data/maps/PalletTown_RivalsHouse_Frlg/scripts.pory"
@@ -582,3 +582,39 @@ PalletTown_RivalsHouse_Text_LovelyAndSweetClefairy::
 	.string "“The lovely and sweet\n"
 # 292 "data/maps/PalletTown_RivalsHouse_Frlg/scripts.pory"
 	.string "CLEFAIRY”$"
+
+PalletTown_RivalsHouse_EventScript_Stairs::
+# 296 "data/maps/PalletTown_RivalsHouse_Frlg/scripts.pory"
+	lockall
+# 297 "data/maps/PalletTown_RivalsHouse_Frlg/scripts.pory"
+	waitse
+# 298 "data/maps/PalletTown_RivalsHouse_Frlg/scripts.pory"
+	playse SE_PIN
+# 299 "data/maps/PalletTown_RivalsHouse_Frlg/scripts.pory"
+	applymovement LOCALID_DAISY, Common_Movement_ExclamationMark
+# 300 "data/maps/PalletTown_RivalsHouse_Frlg/scripts.pory"
+	waitmovement 0
+# 301 "data/maps/PalletTown_RivalsHouse_Frlg/scripts.pory"
+	applymovement LOCALID_DAISY, Common_Movement_WalkInPlaceFasterUp
+# 302 "data/maps/PalletTown_RivalsHouse_Frlg/scripts.pory"
+	waitmovement 0
+# 303 "data/maps/PalletTown_RivalsHouse_Frlg/scripts.pory"
+	msgbox PalletTown_RivalsHouse_EventScript_Stairs_Text_0
+# 304 "data/maps/PalletTown_RivalsHouse_Frlg/scripts.pory"
+	applymovement LOCALID_PLAYER, PalletTown_RivalsHouse_EventScript_Stairs_Movement_0
+# 305 "data/maps/PalletTown_RivalsHouse_Frlg/scripts.pory"
+	waitmovement 0
+# 306 "data/maps/PalletTown_RivalsHouse_Frlg/scripts.pory"
+	releaseall
+	end
+
+
+# 304 "data/maps/PalletTown_RivalsHouse_Frlg/scripts.pory"
+PalletTown_RivalsHouse_EventScript_Stairs_Movement_0:
+# 304 "data/maps/PalletTown_RivalsHouse_Frlg/scripts.pory"
+	walk_left
+	step_end
+
+PalletTown_RivalsHouse_EventScript_Stairs_Text_0:
+# 303 "data/maps/PalletTown_RivalsHouse_Frlg/scripts.pory"
+	.string "DAISY: Dad's working upstairs,\nright now and he doesn't like\l to be disturbed$"

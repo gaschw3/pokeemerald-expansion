@@ -945,13 +945,13 @@ PalletTown_Text_OakPokemonResearchLab::
 # 473 "data/maps/PalletTown_Frlg/scripts.pory"
 PalletTown_Text_PlayersHouse::
 # 474 "data/maps/PalletTown_Frlg/scripts.pory"
-	.string "{PLAYER}'s house$"
+	.string "This is my mailbox.$"
 # 475 "data/maps/PalletTown_Frlg/scripts.pory"
 
 # 476 "data/maps/PalletTown_Frlg/scripts.pory"
 PalletTown_Text_RivalsHouse::
 # 477 "data/maps/PalletTown_Frlg/scripts.pory"
-	.string "{RIVAL}'s house$"
+	.string "This is {RIVAL}'s mailbox.$"
 # 478 "data/maps/PalletTown_Frlg/scripts.pory"
 
 # 479 "data/maps/PalletTown_Frlg/scripts.pory"
@@ -1083,6 +1083,42 @@ PalletTown_EventScript_TownSign::
 	return
 
 
+PalletTown_EventScript_LockedHouse::
+# 548 "data/maps/PalletTown_Frlg/scripts.pory"
+	msgbox PalletTown_EventScript_LockedHouse_Text_0, MSGBOX_SIGN
+	return
+
+
+PalletTown_EventScript_LockedHouseMailbox::
+# 552 "data/maps/PalletTown_Frlg/scripts.pory"
+	msgbox PalletTown_EventScript_LockedHouseMailbox_Text_0, MSGBOX_SIGN
+	return
+
+
+PalletTown_EventScript_OaksArea::
+# 556 "data/maps/PalletTown_Frlg/scripts.pory"
+	msgbox PalletTown_EventScript_OaksArea_Text_0, MSGBOX_SIGN
+# 557 "data/maps/PalletTown_Frlg/scripts.pory"
+	msgbox PalletTown_EventScript_OaksArea_Text_1, MSGBOX_NPC
+	return
+
+
 PalletTown_EventScript_TownSign_Text_0:
 # 544 "data/maps/PalletTown_Frlg/scripts.pory"
 	.string "PALLET TOWN\nShades of your journey await!$"
+
+PalletTown_EventScript_LockedHouse_Text_0:
+# 548 "data/maps/PalletTown_Frlg/scripts.pory"
+	.string "This house is locked.$"
+
+PalletTown_EventScript_LockedHouseMailbox_Text_0:
+# 552 "data/maps/PalletTown_Frlg/scripts.pory"
+	.string "This is MR. LEWIS's mailbox.$"
+
+PalletTown_EventScript_OaksArea_Text_0:
+# 556 "data/maps/PalletTown_Frlg/scripts.pory"
+	.string "OAK's RESEARCH PARK.$"
+
+PalletTown_EventScript_OaksArea_Text_1:
+# 557 "data/maps/PalletTown_Frlg/scripts.pory"
+	.string "He always keeps it locked.$"

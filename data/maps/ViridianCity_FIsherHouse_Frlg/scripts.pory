@@ -1,0 +1,53 @@
+raw `
+ViridianCity_FIsherHouse_Frlg_MapScripts::
+	.byte 0
+
+`
+script ViridianCity_FisherHouse_EventScript_FishingSign {
+	msgbox("There are 3 FISHING RODS\pOLD, GOOD, and SUPER!", MSGBOX_SIGN)
+}
+
+script ViridianCity_FisherHouse_EventScript_FishingTV {
+	msgbox("It's Slow TV of an aquarium.", MSGBOX_SIGN)
+}
+
+script ViridianCity_FisherHouse_EventScript_Blub {
+	lock
+	faceplayer
+	waitse
+	playmoncry(SPECIES_STARYU, CRY_MODE_NORMAL)
+	msgbox("BLUB: Glugluglu!", MSGBOX_NPC)
+	waitmoncry
+	release
+	end
+}
+
+script ViridianCity_FisherHouse_EventScript_Fisherman {
+	lock
+	faceplayer
+	if (flag(FLAG_GOT_OLD_ROD)) {
+		msgbox("Hey there, {PLAYER}!\pHow are the fish biting?", MSGBOX_NPC)
+		release
+		end
+	} else {
+		msgbox("I'm the youngest FISHING GURU!\pI simply looove fishing!\nYou look like a fisher.\pTell me, do you like to fish?$", MSGBOX_YESNO)
+		while (var(VAR_RESULT) != 1) {
+        	msgbox("Oh… did you mean YES?", MSGBOX_YESNO)
+		}
+		if (checkitemspace(ITEM_OLD_ROD) == FALSE) {
+			msgbox("Oh, no!\pI had a nice gift for you, but you\nhave no room for it!", MSGBOX_NPC)
+			release
+			end
+		} else {
+			additem(ITEM_OLD_ROD)
+			msgbox("Grand! I like your style.\nI think we can be friends.\pTake this and fish, young friend!$", MSGBOX_NPC)
+			msgreceiveditem("{PLAYER} received an OLD ROD from\nthe FISHING GURU.", ITEM_OLD_ROD)
+			setflag(FLAG_GOT_OLD_ROD)
+			msgbox("Fishing is a way of life!\nIt's like the finest poetry.\pSeas, rivers, or ponds; go out\nand land the big one, my friend.", MSGBOX_NPC)
+			release
+			end
+		}
+	}
+	release
+	end
+}

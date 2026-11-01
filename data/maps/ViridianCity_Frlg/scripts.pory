@@ -51,6 +51,7 @@ ViridianCity_EventScript_GymDoorLocked::
 	end
 
 ViridianCity_Movement_JumpDownLedge::
+	walk_down
 	jump_2_down
 	step_end
 
@@ -234,7 +235,7 @@ ViridianCity_EventScript_DoTutorialBattle::
 	return
 
 ViridianCity_Text_CanCarryMonsAnywhere::
-	.string "Those POKé BALLS at your waist!\n"
+	.string "Those POKéBALLS at your waist!\n"
 	.string "You have POKéMON, don't you?\p"
 	.string "It's great that you can carry and\n"
 	.string "use POKéMON anytime, anywhere.$"
@@ -364,6 +365,7 @@ script ViridianCity_Custom_PokemonCry {
 	lock
     getoverworldwildencounterspecies(VAR_LAST_TALKED)
     playmoncry(VAR_LAST_TALKED, 0)
+	msgbox("It's battling furiously!", MSGBOX_NPC)
     waitmoncry
     release
 	end
@@ -373,8 +375,9 @@ script ViridianCity_Custom_NidorinoTrainer {
 	lock
 	faceplayer
 	msgbox("Look out NIDORINO!", MSGBOX_NPC)
-	applymovement(LOCALID_NIDO_TRAINER, Common_Movement_FaceOriginalDirection)
 	release
+	applymovement(LOCALID_NIDO_TRAINER, moves(face_down))
+	waitmovement(0)
 	end
 }
 
@@ -382,7 +385,8 @@ script ViridianCity_Custom_GengarTrainer {
 	lock
 	faceplayer
 	msgbox("GENGAR, use SHADOW CLAW!", MSGBOX_NPC)
-	applymovement(LOCALID_GENGAR_TRAINER, Common_Movement_FaceOriginalDirection)
 	release
+	applymovement(LOCALID_GENGAR_TRAINER,  moves(face_up))
+	waitmovement(0)
 	end
 }

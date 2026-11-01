@@ -3,7 +3,6 @@
   "name": "PalletTown_PlayersHouse_1F_Frlg",
   "layout": "LAYOUT_PALLET_TOWN_PLAYERS_HOUSE_1F_FRLG",
   "music": "MUS_RG_PALLET",
-  "region": "REGION_KANTO",
   "region_map_section": "MAPSEC_PALLET_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -17,11 +16,11 @@
   "connections": null,
   "object_events": [
     {
-      "local_id": "LOCALID_PLAYERS_HOUSE_1F_MOM",
+      "local_id": "LOCALID_MOM",
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MOM_FRLG",
       "x": 8,
-      "y": 4,
+      "y": 6,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
@@ -34,15 +33,8 @@
   ],
   "warp_events": [
     {
-      "x": 5,
-      "y": 8,
-      "elevation": 3,
-      "dest_map": "MAP_PALLET_TOWN",
-      "dest_warp_id": "0"
-    },
-    {
       "x": 4,
-      "y": 8,
+      "y": 10,
       "elevation": 3,
       "dest_map": "MAP_PALLET_TOWN",
       "dest_warp_id": "0"
@@ -53,16 +45,37 @@
       "elevation": 3,
       "dest_map": "MAP_PALLET_TOWN_PLAYERS_HOUSE_2F",
       "dest_warp_id": "0"
-    },
-    {
-      "x": 3,
-      "y": 9,
-      "elevation": 0,
-      "dest_map": "MAP_PALLET_TOWN",
-      "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_MAP_SCENE_MOM_SHOES",
+      "var_value": "0",
+      "script": "PlayersHouse_EventScript_MomShoesTriggerTop"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_MAP_SCENE_MOM_SHOES",
+      "var_value": "0",
+      "script": "PlayersHouse_EventScript_MomShoesTriggerRight"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_MAP_SCENE_MOM_SHOES",
+      "var_value": "0",
+      "script": "PlayersHouse_EventScript_MomShoesTriggerLeft"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",
@@ -72,5 +85,6 @@
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "PalletTown_PlayersHouse_1F_EventScript_TV"
     }
-  ]
+  ],
+  "region": "REGION_KANTO"
 }

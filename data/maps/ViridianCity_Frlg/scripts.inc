@@ -105,664 +105,688 @@ ViridianCity_EventScript_GymDoorLocked::
 # 53 "data/maps/ViridianCity_Frlg/scripts.pory"
 ViridianCity_Movement_JumpDownLedge::
 # 54 "data/maps/ViridianCity_Frlg/scripts.pory"
-	jump_2_down
-# 55 "data/maps/ViridianCity_Frlg/scripts.pory"
-	step_end
-# 56 "data/maps/ViridianCity_Frlg/scripts.pory"
-
-# 57 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_EventScript_CitySign::
-# 58 "data/maps/ViridianCity_Frlg/scripts.pory"
-	msgbox ViridianCity_Text_CitySign, MSGBOX_SIGN
-# 59 "data/maps/ViridianCity_Frlg/scripts.pory"
-	end
-# 60 "data/maps/ViridianCity_Frlg/scripts.pory"
-
-# 61 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_EventScript_TrainerTips1::
-# 62 "data/maps/ViridianCity_Frlg/scripts.pory"
-	msgbox ViridianCity_Text_CatchMonsForEasierBattles, MSGBOX_SIGN
-# 63 "data/maps/ViridianCity_Frlg/scripts.pory"
-	end
-# 64 "data/maps/ViridianCity_Frlg/scripts.pory"
-
-# 65 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_EventScript_TrainerTips2::
-# 66 "data/maps/ViridianCity_Frlg/scripts.pory"
-	msgbox ViridianCity_Text_MovesLimitedByPP, MSGBOX_SIGN
-# 67 "data/maps/ViridianCity_Frlg/scripts.pory"
-	end
-# 68 "data/maps/ViridianCity_Frlg/scripts.pory"
-
-# 69 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_EventScript_GymSign::
-# 70 "data/maps/ViridianCity_Frlg/scripts.pory"
-	msgbox ViridianCity_Text_GymSign, MSGBOX_SIGN
-# 71 "data/maps/ViridianCity_Frlg/scripts.pory"
-	end
-# 72 "data/maps/ViridianCity_Frlg/scripts.pory"
-
-# 73 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_EventScript_GymDoor::
-# 74 "data/maps/ViridianCity_Frlg/scripts.pory"
-	msgbox ViridianCity_Text_GymDoorsAreLocked, MSGBOX_SIGN
-# 75 "data/maps/ViridianCity_Frlg/scripts.pory"
-	end
-# 76 "data/maps/ViridianCity_Frlg/scripts.pory"
-
-# 77 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_EventScript_Boy::
-# 78 "data/maps/ViridianCity_Frlg/scripts.pory"
-	msgbox ViridianCity_Text_CanCarryMonsAnywhere, MSGBOX_NPC
-# 79 "data/maps/ViridianCity_Frlg/scripts.pory"
-	end
-# 80 "data/maps/ViridianCity_Frlg/scripts.pory"
-
-# 81 "data/maps/ViridianCity_Frlg/scripts.pory"
-@ Other old man, not the tutorial old man
-# 82 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_EventScript_OldMan::
-# 83 "data/maps/ViridianCity_Frlg/scripts.pory"
-	lock
-# 84 "data/maps/ViridianCity_Frlg/scripts.pory"
-	faceplayer
-# 85 "data/maps/ViridianCity_Frlg/scripts.pory"
-	goto_if_eq VAR_MAP_SCENE_VIRIDIAN_CITY_GYM_DOOR, 1, ViridianCity_EventScript_OldManGymLeaderReturned
-# 86 "data/maps/ViridianCity_Frlg/scripts.pory"
-	msgbox ViridianCity_Text_GymClosedWonderWhoLeaderIs
-# 87 "data/maps/ViridianCity_Frlg/scripts.pory"
-	closemessage
-# 88 "data/maps/ViridianCity_Frlg/scripts.pory"
-	applymovement LOCALID_VIRIDIAN_OLD_MAN, Common_Movement_FaceOriginalDirection
-# 89 "data/maps/ViridianCity_Frlg/scripts.pory"
-	waitmovement 0
-# 90 "data/maps/ViridianCity_Frlg/scripts.pory"
-	release
-# 91 "data/maps/ViridianCity_Frlg/scripts.pory"
-	end
-# 92 "data/maps/ViridianCity_Frlg/scripts.pory"
-
-# 93 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_EventScript_OldManGymLeaderReturned::
-# 94 "data/maps/ViridianCity_Frlg/scripts.pory"
-	msgbox ViridianCity_Text_ViridiansGymLeaderReturned
-# 95 "data/maps/ViridianCity_Frlg/scripts.pory"
-	release
-# 96 "data/maps/ViridianCity_Frlg/scripts.pory"
-	end
-# 97 "data/maps/ViridianCity_Frlg/scripts.pory"
-
-# 98 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_EventScript_TutorialOldMan::
-# 99 "data/maps/ViridianCity_Frlg/scripts.pory"
-	lock
-# 100 "data/maps/ViridianCity_Frlg/scripts.pory"
-	faceplayer
-# 101 "data/maps/ViridianCity_Frlg/scripts.pory"
-	goto_if_set FLAG_BADGE01_GET, ViridianCity_EventScript_AskIfTeachyTVHelpful
-# 102 "data/maps/ViridianCity_Frlg/scripts.pory"
-	goto_if_ge VAR_MAP_SCENE_VIRIDIAN_CITY_OLD_MAN, 2, ViridianCity_EventScript_TutorialCompleted
-# 103 "data/maps/ViridianCity_Frlg/scripts.pory"
-	goto_if_eq VAR_MAP_SCENE_VIRIDIAN_CITY_OLD_MAN, 1, ViridianCity_EventScript_TutorialStart
-# 104 "data/maps/ViridianCity_Frlg/scripts.pory"
-	goto_if_eq VAR_MAP_SCENE_VIRIDIAN_CITY_OLD_MAN, 0, ViridianCity_EventScript_TutorialNotReady
-# 105 "data/maps/ViridianCity_Frlg/scripts.pory"
-	end
-# 106 "data/maps/ViridianCity_Frlg/scripts.pory"
-
-# 107 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_EventScript_AskIfTeachyTVHelpful::
-# 108 "data/maps/ViridianCity_Frlg/scripts.pory"
-	msgbox ViridianCity_Text_HowsTeachyTVHelping, MSGBOX_YESNO
-# 109 "data/maps/ViridianCity_Frlg/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, ViridianCity_EventScript_TeachyTVNotHelpful
-# 110 "data/maps/ViridianCity_Frlg/scripts.pory"
-	msgbox ViridianCity_Text_MyGrandsonOnTheShow
-# 111 "data/maps/ViridianCity_Frlg/scripts.pory"
-	release
-# 112 "data/maps/ViridianCity_Frlg/scripts.pory"
-	end
-# 113 "data/maps/ViridianCity_Frlg/scripts.pory"
-
-# 114 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_EventScript_TeachyTVNotHelpful::
-# 115 "data/maps/ViridianCity_Frlg/scripts.pory"
-	msgbox ViridianCity_Text_TooBusyForTeachyTV
-# 116 "data/maps/ViridianCity_Frlg/scripts.pory"
-	release
-# 117 "data/maps/ViridianCity_Frlg/scripts.pory"
-	end
-# 118 "data/maps/ViridianCity_Frlg/scripts.pory"
-
-# 119 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_EventScript_TutorialCompleted::
-# 120 "data/maps/ViridianCity_Frlg/scripts.pory"
-	msgbox ViridianCity_Text_WeakenMonsFirstToCatch
-# 121 "data/maps/ViridianCity_Frlg/scripts.pory"
-	release
-# 122 "data/maps/ViridianCity_Frlg/scripts.pory"
-	end
-# 123 "data/maps/ViridianCity_Frlg/scripts.pory"
-
-# 124 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_EventScript_TutorialStart::
-# 125 "data/maps/ViridianCity_Frlg/scripts.pory"
-	call ViridianCity_EventScript_DoTutorialBattle
-# 126 "data/maps/ViridianCity_Frlg/scripts.pory"
-	release
-# 127 "data/maps/ViridianCity_Frlg/scripts.pory"
-	end
-# 128 "data/maps/ViridianCity_Frlg/scripts.pory"
-
-# 129 "data/maps/ViridianCity_Frlg/scripts.pory"
-@ Unused
-# 130 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_EventScript_WatchToLearnBasics::
-# 131 "data/maps/ViridianCity_Frlg/scripts.pory"
-	msgbox ViridianCity_Text_WatchThatToLearnBasics
-# 132 "data/maps/ViridianCity_Frlg/scripts.pory"
-	release
-# 133 "data/maps/ViridianCity_Frlg/scripts.pory"
-	end
-# 134 "data/maps/ViridianCity_Frlg/scripts.pory"
-
-# 135 "data/maps/ViridianCity_Frlg/scripts.pory"
-@ Unused. Starts battle after the post battle text, which is odd.
-# 136 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_EventScript_TutorialUnused::
-# 137 "data/maps/ViridianCity_Frlg/scripts.pory"
-	msgbox ViridianCity_Text_ThatWasEducationalTakeThis
-# 138 "data/maps/ViridianCity_Frlg/scripts.pory"
-	special StartOldManTutorialBattle
-# 139 "data/maps/ViridianCity_Frlg/scripts.pory"
-	waitstate
-# 140 "data/maps/ViridianCity_Frlg/scripts.pory"
-	release
-# 141 "data/maps/ViridianCity_Frlg/scripts.pory"
-	end
-# 142 "data/maps/ViridianCity_Frlg/scripts.pory"
-
-# 143 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_EventScript_TutorialNotReady::
-# 144 "data/maps/ViridianCity_Frlg/scripts.pory"
-	msgbox ViridianCity_Text_ThisIsPrivateProperty
-# 145 "data/maps/ViridianCity_Frlg/scripts.pory"
-	closemessage
-# 146 "data/maps/ViridianCity_Frlg/scripts.pory"
-	release
-# 147 "data/maps/ViridianCity_Frlg/scripts.pory"
-	end
-# 148 "data/maps/ViridianCity_Frlg/scripts.pory"
-
-# 149 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_EventScript_Youngster::
-# 150 "data/maps/ViridianCity_Frlg/scripts.pory"
-	lock
-# 151 "data/maps/ViridianCity_Frlg/scripts.pory"
-	faceplayer
-# 152 "data/maps/ViridianCity_Frlg/scripts.pory"
-	msgbox ViridianCity_Text_WantToKnowAboutCaterpillarMons, MSGBOX_YESNO
-# 153 "data/maps/ViridianCity_Frlg/scripts.pory"
-	goto_if_eq VAR_RESULT, YES, ViridianCity_EventScript_YoungsterExplainCaterpillars
-# 154 "data/maps/ViridianCity_Frlg/scripts.pory"
-	goto_if_eq VAR_RESULT, NO, ViridianCity_EventScript_YoungsterDeclineExplanation
-# 155 "data/maps/ViridianCity_Frlg/scripts.pory"
-	end
-# 156 "data/maps/ViridianCity_Frlg/scripts.pory"
-
-# 157 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_EventScript_YoungsterExplainCaterpillars::
-# 158 "data/maps/ViridianCity_Frlg/scripts.pory"
-	msgbox ViridianCity_Text_ExplainCaterpieWeedle
-# 159 "data/maps/ViridianCity_Frlg/scripts.pory"
-	release
-# 160 "data/maps/ViridianCity_Frlg/scripts.pory"
-	end
-# 161 "data/maps/ViridianCity_Frlg/scripts.pory"
-
-# 162 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_EventScript_YoungsterDeclineExplanation::
-# 163 "data/maps/ViridianCity_Frlg/scripts.pory"
-	msgbox ViridianCity_Text_OhOkayThen
-# 164 "data/maps/ViridianCity_Frlg/scripts.pory"
-	release
-# 165 "data/maps/ViridianCity_Frlg/scripts.pory"
-	end
-# 166 "data/maps/ViridianCity_Frlg/scripts.pory"
-
-# 167 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_EventScript_Woman::
-# 168 "data/maps/ViridianCity_Frlg/scripts.pory"
-	lock
-# 169 "data/maps/ViridianCity_Frlg/scripts.pory"
-	faceplayer
-# 170 "data/maps/ViridianCity_Frlg/scripts.pory"
-	goto_if_eq VAR_MAP_SCENE_VIRIDIAN_CITY_OLD_MAN, 0, ViridianCity_EventScript_WomanRoadBlocked
-# 171 "data/maps/ViridianCity_Frlg/scripts.pory"
-	msgbox ViridianCity_Text_GoShoppingInPewterOccasionally
-# 172 "data/maps/ViridianCity_Frlg/scripts.pory"
-	release
-# 173 "data/maps/ViridianCity_Frlg/scripts.pory"
-	end
-# 174 "data/maps/ViridianCity_Frlg/scripts.pory"
-
-# 175 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_EventScript_WomanRoadBlocked::
-# 176 "data/maps/ViridianCity_Frlg/scripts.pory"
-	msgbox ViridianCity_Text_GrandpaHasntHadCoffeeYet
-# 177 "data/maps/ViridianCity_Frlg/scripts.pory"
-	closemessage
-# 178 "data/maps/ViridianCity_Frlg/scripts.pory"
-	applymovement LOCALID_VIRIDIAN_WOMAN, Common_Movement_FaceOriginalDirection
-# 179 "data/maps/ViridianCity_Frlg/scripts.pory"
-	waitmovement 0
-# 180 "data/maps/ViridianCity_Frlg/scripts.pory"
-	release
-# 181 "data/maps/ViridianCity_Frlg/scripts.pory"
-	end
-# 182 "data/maps/ViridianCity_Frlg/scripts.pory"
-
-# 183 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_EventScript_DreamEaterTutor::
-# 184 "data/maps/ViridianCity_Frlg/scripts.pory"
-	goto EventScript_DreamEaterTutor
-# 185 "data/maps/ViridianCity_Frlg/scripts.pory"
-	end
-# 186 "data/maps/ViridianCity_Frlg/scripts.pory"
-
-# 187 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_EventScript_RoadBlocked::
-# 188 "data/maps/ViridianCity_Frlg/scripts.pory"
-	lockall
-# 189 "data/maps/ViridianCity_Frlg/scripts.pory"
-	textcolor NPC_TEXT_COLOR_MALE
-# 190 "data/maps/ViridianCity_Frlg/scripts.pory"
-	msgbox ViridianCity_Text_ThisIsPrivateProperty
-# 191 "data/maps/ViridianCity_Frlg/scripts.pory"
-	closemessage
-# 192 "data/maps/ViridianCity_Frlg/scripts.pory"
-	applymovement LOCALID_PLAYER, ViridianCity_Movement_WalkDown
-# 193 "data/maps/ViridianCity_Frlg/scripts.pory"
-	waitmovement 0
-# 194 "data/maps/ViridianCity_Frlg/scripts.pory"
-	releaseall
-# 195 "data/maps/ViridianCity_Frlg/scripts.pory"
-	end
-# 196 "data/maps/ViridianCity_Frlg/scripts.pory"
-
-# 197 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_Movement_WalkDown::
-# 198 "data/maps/ViridianCity_Frlg/scripts.pory"
 	walk_down
-# 199 "data/maps/ViridianCity_Frlg/scripts.pory"
+# 55 "data/maps/ViridianCity_Frlg/scripts.pory"
+	jump_2_down
+# 56 "data/maps/ViridianCity_Frlg/scripts.pory"
 	step_end
-# 200 "data/maps/ViridianCity_Frlg/scripts.pory"
+# 57 "data/maps/ViridianCity_Frlg/scripts.pory"
 
-# 201 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_EventScript_TutorialTriggerLeft::
-# 202 "data/maps/ViridianCity_Frlg/scripts.pory"
-	lockall
-# 203 "data/maps/ViridianCity_Frlg/scripts.pory"
-	textcolor NPC_TEXT_COLOR_MALE
-# 204 "data/maps/ViridianCity_Frlg/scripts.pory"
-	applymovement LOCALID_TUTORIAL_MAN, Common_Movement_WalkInPlaceFasterLeft
-# 205 "data/maps/ViridianCity_Frlg/scripts.pory"
-	waitmovement 0
-# 206 "data/maps/ViridianCity_Frlg/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
-# 207 "data/maps/ViridianCity_Frlg/scripts.pory"
-	waitmovement 0
-# 208 "data/maps/ViridianCity_Frlg/scripts.pory"
-	call ViridianCity_EventScript_DoTutorialBattle
-# 209 "data/maps/ViridianCity_Frlg/scripts.pory"
-	release
-# 210 "data/maps/ViridianCity_Frlg/scripts.pory"
+# 58 "data/maps/ViridianCity_Frlg/scripts.pory"
+ViridianCity_EventScript_CitySign::
+# 59 "data/maps/ViridianCity_Frlg/scripts.pory"
+	msgbox ViridianCity_Text_CitySign, MSGBOX_SIGN
+# 60 "data/maps/ViridianCity_Frlg/scripts.pory"
 	end
-# 211 "data/maps/ViridianCity_Frlg/scripts.pory"
+# 61 "data/maps/ViridianCity_Frlg/scripts.pory"
 
-# 212 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_EventScript_TutorialTriggerRight::
-# 213 "data/maps/ViridianCity_Frlg/scripts.pory"
-	lockall
-# 214 "data/maps/ViridianCity_Frlg/scripts.pory"
-	textcolor NPC_TEXT_COLOR_MALE
-# 215 "data/maps/ViridianCity_Frlg/scripts.pory"
-	applymovement LOCALID_TUTORIAL_MAN, Common_Movement_WalkInPlaceFasterRight
-# 216 "data/maps/ViridianCity_Frlg/scripts.pory"
-	waitmovement 0
-# 217 "data/maps/ViridianCity_Frlg/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
-# 218 "data/maps/ViridianCity_Frlg/scripts.pory"
-	waitmovement 0
-# 219 "data/maps/ViridianCity_Frlg/scripts.pory"
-	call ViridianCity_EventScript_DoTutorialBattle
-# 220 "data/maps/ViridianCity_Frlg/scripts.pory"
-	release
-# 221 "data/maps/ViridianCity_Frlg/scripts.pory"
+# 62 "data/maps/ViridianCity_Frlg/scripts.pory"
+ViridianCity_EventScript_TrainerTips1::
+# 63 "data/maps/ViridianCity_Frlg/scripts.pory"
+	msgbox ViridianCity_Text_CatchMonsForEasierBattles, MSGBOX_SIGN
+# 64 "data/maps/ViridianCity_Frlg/scripts.pory"
 	end
-# 222 "data/maps/ViridianCity_Frlg/scripts.pory"
+# 65 "data/maps/ViridianCity_Frlg/scripts.pory"
 
-# 223 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_EventScript_DoTutorialBattle::
-# 224 "data/maps/ViridianCity_Frlg/scripts.pory"
-	msgbox ViridianCity_Text_ShowYouHowToCatchMons
-# 225 "data/maps/ViridianCity_Frlg/scripts.pory"
-	closemessage
-# 226 "data/maps/ViridianCity_Frlg/scripts.pory"
-	special StartOldManTutorialBattle
-# 227 "data/maps/ViridianCity_Frlg/scripts.pory"
-	waitstate
-# 228 "data/maps/ViridianCity_Frlg/scripts.pory"
+# 66 "data/maps/ViridianCity_Frlg/scripts.pory"
+ViridianCity_EventScript_TrainerTips2::
+# 67 "data/maps/ViridianCity_Frlg/scripts.pory"
+	msgbox ViridianCity_Text_MovesLimitedByPP, MSGBOX_SIGN
+# 68 "data/maps/ViridianCity_Frlg/scripts.pory"
+	end
+# 69 "data/maps/ViridianCity_Frlg/scripts.pory"
+
+# 70 "data/maps/ViridianCity_Frlg/scripts.pory"
+ViridianCity_EventScript_GymSign::
+# 71 "data/maps/ViridianCity_Frlg/scripts.pory"
+	msgbox ViridianCity_Text_GymSign, MSGBOX_SIGN
+# 72 "data/maps/ViridianCity_Frlg/scripts.pory"
+	end
+# 73 "data/maps/ViridianCity_Frlg/scripts.pory"
+
+# 74 "data/maps/ViridianCity_Frlg/scripts.pory"
+ViridianCity_EventScript_GymDoor::
+# 75 "data/maps/ViridianCity_Frlg/scripts.pory"
+	msgbox ViridianCity_Text_GymDoorsAreLocked, MSGBOX_SIGN
+# 76 "data/maps/ViridianCity_Frlg/scripts.pory"
+	end
+# 77 "data/maps/ViridianCity_Frlg/scripts.pory"
+
+# 78 "data/maps/ViridianCity_Frlg/scripts.pory"
+ViridianCity_EventScript_Boy::
+# 79 "data/maps/ViridianCity_Frlg/scripts.pory"
+	msgbox ViridianCity_Text_CanCarryMonsAnywhere, MSGBOX_NPC
+# 80 "data/maps/ViridianCity_Frlg/scripts.pory"
+	end
+# 81 "data/maps/ViridianCity_Frlg/scripts.pory"
+
+# 82 "data/maps/ViridianCity_Frlg/scripts.pory"
+@ Other old man, not the tutorial old man
+# 83 "data/maps/ViridianCity_Frlg/scripts.pory"
+ViridianCity_EventScript_OldMan::
+# 84 "data/maps/ViridianCity_Frlg/scripts.pory"
 	lock
-# 229 "data/maps/ViridianCity_Frlg/scripts.pory"
+# 85 "data/maps/ViridianCity_Frlg/scripts.pory"
 	faceplayer
-# 230 "data/maps/ViridianCity_Frlg/scripts.pory"
-	msgbox ViridianCity_Text_ThatWasEducationalTakeThis
-# 231 "data/maps/ViridianCity_Frlg/scripts.pory"
-	setvar VAR_MAP_SCENE_VIRIDIAN_CITY_OLD_MAN, 2
-# 232 "data/maps/ViridianCity_Frlg/scripts.pory"
-	giveitem ITEM_TEACHY_TV
-# 233 "data/maps/ViridianCity_Frlg/scripts.pory"
+# 86 "data/maps/ViridianCity_Frlg/scripts.pory"
+	goto_if_eq VAR_MAP_SCENE_VIRIDIAN_CITY_GYM_DOOR, 1, ViridianCity_EventScript_OldManGymLeaderReturned
+# 87 "data/maps/ViridianCity_Frlg/scripts.pory"
+	msgbox ViridianCity_Text_GymClosedWonderWhoLeaderIs
+# 88 "data/maps/ViridianCity_Frlg/scripts.pory"
+	closemessage
+# 89 "data/maps/ViridianCity_Frlg/scripts.pory"
+	applymovement LOCALID_VIRIDIAN_OLD_MAN, Common_Movement_FaceOriginalDirection
+# 90 "data/maps/ViridianCity_Frlg/scripts.pory"
+	waitmovement 0
+# 91 "data/maps/ViridianCity_Frlg/scripts.pory"
+	release
+# 92 "data/maps/ViridianCity_Frlg/scripts.pory"
+	end
+# 93 "data/maps/ViridianCity_Frlg/scripts.pory"
+
+# 94 "data/maps/ViridianCity_Frlg/scripts.pory"
+ViridianCity_EventScript_OldManGymLeaderReturned::
+# 95 "data/maps/ViridianCity_Frlg/scripts.pory"
+	msgbox ViridianCity_Text_ViridiansGymLeaderReturned
+# 96 "data/maps/ViridianCity_Frlg/scripts.pory"
+	release
+# 97 "data/maps/ViridianCity_Frlg/scripts.pory"
+	end
+# 98 "data/maps/ViridianCity_Frlg/scripts.pory"
+
+# 99 "data/maps/ViridianCity_Frlg/scripts.pory"
+ViridianCity_EventScript_TutorialOldMan::
+# 100 "data/maps/ViridianCity_Frlg/scripts.pory"
+	lock
+# 101 "data/maps/ViridianCity_Frlg/scripts.pory"
+	faceplayer
+# 102 "data/maps/ViridianCity_Frlg/scripts.pory"
+	goto_if_set FLAG_BADGE01_GET, ViridianCity_EventScript_AskIfTeachyTVHelpful
+# 103 "data/maps/ViridianCity_Frlg/scripts.pory"
+	goto_if_ge VAR_MAP_SCENE_VIRIDIAN_CITY_OLD_MAN, 2, ViridianCity_EventScript_TutorialCompleted
+# 104 "data/maps/ViridianCity_Frlg/scripts.pory"
+	goto_if_eq VAR_MAP_SCENE_VIRIDIAN_CITY_OLD_MAN, 1, ViridianCity_EventScript_TutorialStart
+# 105 "data/maps/ViridianCity_Frlg/scripts.pory"
+	goto_if_eq VAR_MAP_SCENE_VIRIDIAN_CITY_OLD_MAN, 0, ViridianCity_EventScript_TutorialNotReady
+# 106 "data/maps/ViridianCity_Frlg/scripts.pory"
+	end
+# 107 "data/maps/ViridianCity_Frlg/scripts.pory"
+
+# 108 "data/maps/ViridianCity_Frlg/scripts.pory"
+ViridianCity_EventScript_AskIfTeachyTVHelpful::
+# 109 "data/maps/ViridianCity_Frlg/scripts.pory"
+	msgbox ViridianCity_Text_HowsTeachyTVHelping, MSGBOX_YESNO
+# 110 "data/maps/ViridianCity_Frlg/scripts.pory"
+	goto_if_eq VAR_RESULT, NO, ViridianCity_EventScript_TeachyTVNotHelpful
+# 111 "data/maps/ViridianCity_Frlg/scripts.pory"
+	msgbox ViridianCity_Text_MyGrandsonOnTheShow
+# 112 "data/maps/ViridianCity_Frlg/scripts.pory"
+	release
+# 113 "data/maps/ViridianCity_Frlg/scripts.pory"
+	end
+# 114 "data/maps/ViridianCity_Frlg/scripts.pory"
+
+# 115 "data/maps/ViridianCity_Frlg/scripts.pory"
+ViridianCity_EventScript_TeachyTVNotHelpful::
+# 116 "data/maps/ViridianCity_Frlg/scripts.pory"
+	msgbox ViridianCity_Text_TooBusyForTeachyTV
+# 117 "data/maps/ViridianCity_Frlg/scripts.pory"
+	release
+# 118 "data/maps/ViridianCity_Frlg/scripts.pory"
+	end
+# 119 "data/maps/ViridianCity_Frlg/scripts.pory"
+
+# 120 "data/maps/ViridianCity_Frlg/scripts.pory"
+ViridianCity_EventScript_TutorialCompleted::
+# 121 "data/maps/ViridianCity_Frlg/scripts.pory"
+	msgbox ViridianCity_Text_WeakenMonsFirstToCatch
+# 122 "data/maps/ViridianCity_Frlg/scripts.pory"
+	release
+# 123 "data/maps/ViridianCity_Frlg/scripts.pory"
+	end
+# 124 "data/maps/ViridianCity_Frlg/scripts.pory"
+
+# 125 "data/maps/ViridianCity_Frlg/scripts.pory"
+ViridianCity_EventScript_TutorialStart::
+# 126 "data/maps/ViridianCity_Frlg/scripts.pory"
+	call ViridianCity_EventScript_DoTutorialBattle
+# 127 "data/maps/ViridianCity_Frlg/scripts.pory"
+	release
+# 128 "data/maps/ViridianCity_Frlg/scripts.pory"
+	end
+# 129 "data/maps/ViridianCity_Frlg/scripts.pory"
+
+# 130 "data/maps/ViridianCity_Frlg/scripts.pory"
+@ Unused
+# 131 "data/maps/ViridianCity_Frlg/scripts.pory"
+ViridianCity_EventScript_WatchToLearnBasics::
+# 132 "data/maps/ViridianCity_Frlg/scripts.pory"
 	msgbox ViridianCity_Text_WatchThatToLearnBasics
+# 133 "data/maps/ViridianCity_Frlg/scripts.pory"
+	release
+# 134 "data/maps/ViridianCity_Frlg/scripts.pory"
+	end
+# 135 "data/maps/ViridianCity_Frlg/scripts.pory"
+
+# 136 "data/maps/ViridianCity_Frlg/scripts.pory"
+@ Unused. Starts battle after the post battle text, which is odd.
+# 137 "data/maps/ViridianCity_Frlg/scripts.pory"
+ViridianCity_EventScript_TutorialUnused::
+# 138 "data/maps/ViridianCity_Frlg/scripts.pory"
+	msgbox ViridianCity_Text_ThatWasEducationalTakeThis
+# 139 "data/maps/ViridianCity_Frlg/scripts.pory"
+	special StartOldManTutorialBattle
+# 140 "data/maps/ViridianCity_Frlg/scripts.pory"
+	waitstate
+# 141 "data/maps/ViridianCity_Frlg/scripts.pory"
+	release
+# 142 "data/maps/ViridianCity_Frlg/scripts.pory"
+	end
+# 143 "data/maps/ViridianCity_Frlg/scripts.pory"
+
+# 144 "data/maps/ViridianCity_Frlg/scripts.pory"
+ViridianCity_EventScript_TutorialNotReady::
+# 145 "data/maps/ViridianCity_Frlg/scripts.pory"
+	msgbox ViridianCity_Text_ThisIsPrivateProperty
+# 146 "data/maps/ViridianCity_Frlg/scripts.pory"
+	closemessage
+# 147 "data/maps/ViridianCity_Frlg/scripts.pory"
+	release
+# 148 "data/maps/ViridianCity_Frlg/scripts.pory"
+	end
+# 149 "data/maps/ViridianCity_Frlg/scripts.pory"
+
+# 150 "data/maps/ViridianCity_Frlg/scripts.pory"
+ViridianCity_EventScript_Youngster::
+# 151 "data/maps/ViridianCity_Frlg/scripts.pory"
+	lock
+# 152 "data/maps/ViridianCity_Frlg/scripts.pory"
+	faceplayer
+# 153 "data/maps/ViridianCity_Frlg/scripts.pory"
+	msgbox ViridianCity_Text_WantToKnowAboutCaterpillarMons, MSGBOX_YESNO
+# 154 "data/maps/ViridianCity_Frlg/scripts.pory"
+	goto_if_eq VAR_RESULT, YES, ViridianCity_EventScript_YoungsterExplainCaterpillars
+# 155 "data/maps/ViridianCity_Frlg/scripts.pory"
+	goto_if_eq VAR_RESULT, NO, ViridianCity_EventScript_YoungsterDeclineExplanation
+# 156 "data/maps/ViridianCity_Frlg/scripts.pory"
+	end
+# 157 "data/maps/ViridianCity_Frlg/scripts.pory"
+
+# 158 "data/maps/ViridianCity_Frlg/scripts.pory"
+ViridianCity_EventScript_YoungsterExplainCaterpillars::
+# 159 "data/maps/ViridianCity_Frlg/scripts.pory"
+	msgbox ViridianCity_Text_ExplainCaterpieWeedle
+# 160 "data/maps/ViridianCity_Frlg/scripts.pory"
+	release
+# 161 "data/maps/ViridianCity_Frlg/scripts.pory"
+	end
+# 162 "data/maps/ViridianCity_Frlg/scripts.pory"
+
+# 163 "data/maps/ViridianCity_Frlg/scripts.pory"
+ViridianCity_EventScript_YoungsterDeclineExplanation::
+# 164 "data/maps/ViridianCity_Frlg/scripts.pory"
+	msgbox ViridianCity_Text_OhOkayThen
+# 165 "data/maps/ViridianCity_Frlg/scripts.pory"
+	release
+# 166 "data/maps/ViridianCity_Frlg/scripts.pory"
+	end
+# 167 "data/maps/ViridianCity_Frlg/scripts.pory"
+
+# 168 "data/maps/ViridianCity_Frlg/scripts.pory"
+ViridianCity_EventScript_Woman::
+# 169 "data/maps/ViridianCity_Frlg/scripts.pory"
+	lock
+# 170 "data/maps/ViridianCity_Frlg/scripts.pory"
+	faceplayer
+# 171 "data/maps/ViridianCity_Frlg/scripts.pory"
+	goto_if_eq VAR_MAP_SCENE_VIRIDIAN_CITY_OLD_MAN, 0, ViridianCity_EventScript_WomanRoadBlocked
+# 172 "data/maps/ViridianCity_Frlg/scripts.pory"
+	msgbox ViridianCity_Text_GoShoppingInPewterOccasionally
+# 173 "data/maps/ViridianCity_Frlg/scripts.pory"
+	release
+# 174 "data/maps/ViridianCity_Frlg/scripts.pory"
+	end
+# 175 "data/maps/ViridianCity_Frlg/scripts.pory"
+
+# 176 "data/maps/ViridianCity_Frlg/scripts.pory"
+ViridianCity_EventScript_WomanRoadBlocked::
+# 177 "data/maps/ViridianCity_Frlg/scripts.pory"
+	msgbox ViridianCity_Text_GrandpaHasntHadCoffeeYet
+# 178 "data/maps/ViridianCity_Frlg/scripts.pory"
+	closemessage
+# 179 "data/maps/ViridianCity_Frlg/scripts.pory"
+	applymovement LOCALID_VIRIDIAN_WOMAN, Common_Movement_FaceOriginalDirection
+# 180 "data/maps/ViridianCity_Frlg/scripts.pory"
+	waitmovement 0
+# 181 "data/maps/ViridianCity_Frlg/scripts.pory"
+	release
+# 182 "data/maps/ViridianCity_Frlg/scripts.pory"
+	end
+# 183 "data/maps/ViridianCity_Frlg/scripts.pory"
+
+# 184 "data/maps/ViridianCity_Frlg/scripts.pory"
+ViridianCity_EventScript_DreamEaterTutor::
+# 185 "data/maps/ViridianCity_Frlg/scripts.pory"
+	goto EventScript_DreamEaterTutor
+# 186 "data/maps/ViridianCity_Frlg/scripts.pory"
+	end
+# 187 "data/maps/ViridianCity_Frlg/scripts.pory"
+
+# 188 "data/maps/ViridianCity_Frlg/scripts.pory"
+ViridianCity_EventScript_RoadBlocked::
+# 189 "data/maps/ViridianCity_Frlg/scripts.pory"
+	lockall
+# 190 "data/maps/ViridianCity_Frlg/scripts.pory"
+	textcolor NPC_TEXT_COLOR_MALE
+# 191 "data/maps/ViridianCity_Frlg/scripts.pory"
+	msgbox ViridianCity_Text_ThisIsPrivateProperty
+# 192 "data/maps/ViridianCity_Frlg/scripts.pory"
+	closemessage
+# 193 "data/maps/ViridianCity_Frlg/scripts.pory"
+	applymovement LOCALID_PLAYER, ViridianCity_Movement_WalkDown
+# 194 "data/maps/ViridianCity_Frlg/scripts.pory"
+	waitmovement 0
+# 195 "data/maps/ViridianCity_Frlg/scripts.pory"
+	releaseall
+# 196 "data/maps/ViridianCity_Frlg/scripts.pory"
+	end
+# 197 "data/maps/ViridianCity_Frlg/scripts.pory"
+
+# 198 "data/maps/ViridianCity_Frlg/scripts.pory"
+ViridianCity_Movement_WalkDown::
+# 199 "data/maps/ViridianCity_Frlg/scripts.pory"
+	walk_down
+# 200 "data/maps/ViridianCity_Frlg/scripts.pory"
+	step_end
+# 201 "data/maps/ViridianCity_Frlg/scripts.pory"
+
+# 202 "data/maps/ViridianCity_Frlg/scripts.pory"
+ViridianCity_EventScript_TutorialTriggerLeft::
+# 203 "data/maps/ViridianCity_Frlg/scripts.pory"
+	lockall
+# 204 "data/maps/ViridianCity_Frlg/scripts.pory"
+	textcolor NPC_TEXT_COLOR_MALE
+# 205 "data/maps/ViridianCity_Frlg/scripts.pory"
+	applymovement LOCALID_TUTORIAL_MAN, Common_Movement_WalkInPlaceFasterLeft
+# 206 "data/maps/ViridianCity_Frlg/scripts.pory"
+	waitmovement 0
+# 207 "data/maps/ViridianCity_Frlg/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
+# 208 "data/maps/ViridianCity_Frlg/scripts.pory"
+	waitmovement 0
+# 209 "data/maps/ViridianCity_Frlg/scripts.pory"
+	call ViridianCity_EventScript_DoTutorialBattle
+# 210 "data/maps/ViridianCity_Frlg/scripts.pory"
+	release
+# 211 "data/maps/ViridianCity_Frlg/scripts.pory"
+	end
+# 212 "data/maps/ViridianCity_Frlg/scripts.pory"
+
+# 213 "data/maps/ViridianCity_Frlg/scripts.pory"
+ViridianCity_EventScript_TutorialTriggerRight::
+# 214 "data/maps/ViridianCity_Frlg/scripts.pory"
+	lockall
+# 215 "data/maps/ViridianCity_Frlg/scripts.pory"
+	textcolor NPC_TEXT_COLOR_MALE
+# 216 "data/maps/ViridianCity_Frlg/scripts.pory"
+	applymovement LOCALID_TUTORIAL_MAN, Common_Movement_WalkInPlaceFasterRight
+# 217 "data/maps/ViridianCity_Frlg/scripts.pory"
+	waitmovement 0
+# 218 "data/maps/ViridianCity_Frlg/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterLeft
+# 219 "data/maps/ViridianCity_Frlg/scripts.pory"
+	waitmovement 0
+# 220 "data/maps/ViridianCity_Frlg/scripts.pory"
+	call ViridianCity_EventScript_DoTutorialBattle
+# 221 "data/maps/ViridianCity_Frlg/scripts.pory"
+	release
+# 222 "data/maps/ViridianCity_Frlg/scripts.pory"
+	end
+# 223 "data/maps/ViridianCity_Frlg/scripts.pory"
+
+# 224 "data/maps/ViridianCity_Frlg/scripts.pory"
+ViridianCity_EventScript_DoTutorialBattle::
+# 225 "data/maps/ViridianCity_Frlg/scripts.pory"
+	msgbox ViridianCity_Text_ShowYouHowToCatchMons
+# 226 "data/maps/ViridianCity_Frlg/scripts.pory"
+	closemessage
+# 227 "data/maps/ViridianCity_Frlg/scripts.pory"
+	special StartOldManTutorialBattle
+# 228 "data/maps/ViridianCity_Frlg/scripts.pory"
+	waitstate
+# 229 "data/maps/ViridianCity_Frlg/scripts.pory"
+	lock
+# 230 "data/maps/ViridianCity_Frlg/scripts.pory"
+	faceplayer
+# 231 "data/maps/ViridianCity_Frlg/scripts.pory"
+	msgbox ViridianCity_Text_ThatWasEducationalTakeThis
+# 232 "data/maps/ViridianCity_Frlg/scripts.pory"
+	setvar VAR_MAP_SCENE_VIRIDIAN_CITY_OLD_MAN, 2
+# 233 "data/maps/ViridianCity_Frlg/scripts.pory"
+	giveitem ITEM_TEACHY_TV
 # 234 "data/maps/ViridianCity_Frlg/scripts.pory"
-	return
+	msgbox ViridianCity_Text_WatchThatToLearnBasics
 # 235 "data/maps/ViridianCity_Frlg/scripts.pory"
-
+	return
 # 236 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_Text_CanCarryMonsAnywhere::
+
 # 237 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "Those POKé BALLS at your waist!\n"
+ViridianCity_Text_CanCarryMonsAnywhere::
 # 238 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "You have POKéMON, don't you?\p"
+	.string "Those POKéBALLS at your waist!\n"
 # 239 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "It's great that you can carry and\n"
+	.string "You have POKéMON, don't you?\p"
 # 240 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "use POKéMON anytime, anywhere.$"
+	.string "It's great that you can carry and\n"
 # 241 "data/maps/ViridianCity_Frlg/scripts.pory"
-
+	.string "use POKéMON anytime, anywhere.$"
 # 242 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_Text_GymClosedWonderWhoLeaderIs::
+
 # 243 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "This POKéMON GYM is always closed.\p"
+ViridianCity_Text_GymClosedWonderWhoLeaderIs::
 # 244 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "I wonder who the LEADER is?$"
+	.string "This POKéMON GYM is always closed.\p"
 # 245 "data/maps/ViridianCity_Frlg/scripts.pory"
-
+	.string "I wonder who the LEADER is?$"
 # 246 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_Text_ViridiansGymLeaderReturned::
+
 # 247 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "VIRIDIAN GYM's LEADER returned!$"
+ViridianCity_Text_ViridiansGymLeaderReturned::
 # 248 "data/maps/ViridianCity_Frlg/scripts.pory"
-
+	.string "VIRIDIAN GYM's LEADER returned!$"
 # 249 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_Text_WantToKnowAboutCaterpillarMons::
+
 # 250 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "You want to know about the two\n"
+ViridianCity_Text_WantToKnowAboutCaterpillarMons::
 # 251 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "kinds of caterpillar POKéMON?$"
+	.string "You want to know about the two\n"
 # 252 "data/maps/ViridianCity_Frlg/scripts.pory"
-
+	.string "kinds of caterpillar POKéMON?$"
 # 253 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_Text_OhOkayThen::
+
 # 254 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "Oh, okay then!$"
+ViridianCity_Text_OhOkayThen::
 # 255 "data/maps/ViridianCity_Frlg/scripts.pory"
-
+	.string "Oh, okay then!$"
 # 256 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_Text_ExplainCaterpieWeedle::
+
 # 257 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "CATERPIE has no poison,\n"
+ViridianCity_Text_ExplainCaterpieWeedle::
 # 258 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "but WEEDLE does.\p"
+	.string "CATERPIE has no poison,\n"
 # 259 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "Watch that your POKéMON aren't\n"
+	.string "but WEEDLE does.\p"
 # 260 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "stabbed by WEEDLE's POISON STING.$"
+	.string "Watch that your POKéMON aren't\n"
 # 261 "data/maps/ViridianCity_Frlg/scripts.pory"
-
+	.string "stabbed by WEEDLE's POISON STING.$"
 # 262 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_Text_GrandpaHasntHadCoffeeYet::
+
 # 263 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "Oh, Grandpa!\n"
+ViridianCity_Text_GrandpaHasntHadCoffeeYet::
 # 264 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "Don't be so mean!\p"
+	.string "Oh, Grandpa!\n"
 # 265 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "I'm so sorry.\n"
+	.string "Don't be so mean!\p"
 # 266 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "He hasn't had his coffee yet.$"
+	.string "I'm so sorry.\n"
 # 267 "data/maps/ViridianCity_Frlg/scripts.pory"
-
+	.string "He hasn't had his coffee yet.$"
 # 268 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_Text_GoShoppingInPewterOccasionally::
+
 # 269 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "I go shopping in PEWTER CITY\n"
+ViridianCity_Text_GoShoppingInPewterOccasionally::
 # 270 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "occasionally.\p"
+	.string "I go shopping in PEWTER CITY\n"
 # 271 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "I have to take the winding trail in\n"
+	.string "occasionally.\p"
 # 272 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "VIRIDIAN FOREST when I go.$"
+	.string "I have to take the winding trail in\n"
 # 273 "data/maps/ViridianCity_Frlg/scripts.pory"
-
+	.string "VIRIDIAN FOREST when I go.$"
 # 274 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_Text_ThisIsPrivateProperty::
+
 # 275 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "I absolutely forbid you from\n"
+ViridianCity_Text_ThisIsPrivateProperty::
 # 276 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "going through here!\p"
+	.string "I absolutely forbid you from\n"
 # 277 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "This is private property!$"
+	.string "going through here!\p"
 # 278 "data/maps/ViridianCity_Frlg/scripts.pory"
-
+	.string "This is private property!$"
 # 279 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_Text_ShowYouHowToCatchMons::
+
 # 280 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "Well, now, I've had my coffee, and\n"
+ViridianCity_Text_ShowYouHowToCatchMons::
 # 281 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "that's what I need to get going!\p"
+	.string "Well, now, I've had my coffee, and\n"
 # 282 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "Hm?\n"
+	.string "that's what I need to get going!\p"
 # 283 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "What is that red box you have?\p"
+	.string "Hm?\n"
 # 284 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "Ah, so you're working on your\n"
+	.string "What is that red box you have?\p"
 # 285 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "POKéDEX.\p"
+	.string "Ah, so you're working on your\n"
 # 286 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "Then let me give you a word of\n"
+	.string "POKéDEX.\p"
 # 287 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "advice.\p"
+	.string "Then let me give you a word of\n"
 # 288 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "Whenever you catch a POKéMON,\n"
+	.string "advice.\p"
 # 289 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "the POKéDEX automatically updates\l"
+	.string "Whenever you catch a POKéMON,\n"
 # 290 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "its data.\p"
+	.string "the POKéDEX automatically updates\l"
 # 291 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "…You don't know how to catch\n"
+	.string "its data.\p"
 # 292 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "a POKéMON?\p"
+	.string "…You don't know how to catch\n"
 # 293 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "I suppose I had better show you\n"
+	.string "a POKéMON?\p"
 # 294 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "then!$"
+	.string "I suppose I had better show you\n"
 # 295 "data/maps/ViridianCity_Frlg/scripts.pory"
-
+	.string "then!$"
 # 296 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_Text_ThatWasEducationalTakeThis::
+
 # 297 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "There! Now tell me, that was\n"
+ViridianCity_Text_ThatWasEducationalTakeThis::
 # 298 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "educational, was it not?\p"
+	.string "There! Now tell me, that was\n"
 # 299 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "And here, take this, too.$"
+	.string "educational, was it not?\p"
 # 300 "data/maps/ViridianCity_Frlg/scripts.pory"
-
+	.string "And here, take this, too.$"
 # 301 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_Text_WatchThatToLearnBasics::
+
 # 302 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "If there's something you don't\n"
+ViridianCity_Text_WatchThatToLearnBasics::
 # 303 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "understand, watch that.\p"
+	.string "If there's something you don't\n"
 # 304 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "It will teach you about the basics\n"
+	.string "understand, watch that.\p"
 # 305 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "of being a POKéMON TRAINER.$"
+	.string "It will teach you about the basics\n"
 # 306 "data/maps/ViridianCity_Frlg/scripts.pory"
-
+	.string "of being a POKéMON TRAINER.$"
 # 307 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_Text_WeakenMonsFirstToCatch::
+
 # 308 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "Well, now, I've had my coffee, and\n"
+ViridianCity_Text_WeakenMonsFirstToCatch::
 # 309 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "that's what I need to get going!\p"
-# 310 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "But I made it too strong.\n"
-# 311 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "It gave me a headache…\p"
-# 312 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "Incidentally, are you filling your\n"
-# 313 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "POKéDEX?\p"
-# 314 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "At first, focus on weakening the\n"
-# 315 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "POKéMON before trying to catch it.$"
-# 316 "data/maps/ViridianCity_Frlg/scripts.pory"
-
-# 317 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_Text_HowsTeachyTVHelping::
-# 318 "data/maps/ViridianCity_Frlg/scripts.pory"
 	.string "Well, now, I've had my coffee, and\n"
-# 319 "data/maps/ViridianCity_Frlg/scripts.pory"
+# 310 "data/maps/ViridianCity_Frlg/scripts.pory"
 	.string "that's what I need to get going!\p"
-# 320 "data/maps/ViridianCity_Frlg/scripts.pory"
+# 311 "data/maps/ViridianCity_Frlg/scripts.pory"
 	.string "But I made it too strong.\n"
-# 321 "data/maps/ViridianCity_Frlg/scripts.pory"
+# 312 "data/maps/ViridianCity_Frlg/scripts.pory"
 	.string "It gave me a headache…\p"
+# 313 "data/maps/ViridianCity_Frlg/scripts.pory"
+	.string "Incidentally, are you filling your\n"
+# 314 "data/maps/ViridianCity_Frlg/scripts.pory"
+	.string "POKéDEX?\p"
+# 315 "data/maps/ViridianCity_Frlg/scripts.pory"
+	.string "At first, focus on weakening the\n"
+# 316 "data/maps/ViridianCity_Frlg/scripts.pory"
+	.string "POKéMON before trying to catch it.$"
+# 317 "data/maps/ViridianCity_Frlg/scripts.pory"
+
+# 318 "data/maps/ViridianCity_Frlg/scripts.pory"
+ViridianCity_Text_HowsTeachyTVHelping::
+# 319 "data/maps/ViridianCity_Frlg/scripts.pory"
+	.string "Well, now, I've had my coffee, and\n"
+# 320 "data/maps/ViridianCity_Frlg/scripts.pory"
+	.string "that's what I need to get going!\p"
+# 321 "data/maps/ViridianCity_Frlg/scripts.pory"
+	.string "But I made it too strong.\n"
 # 322 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "Incidentally, is my old TEACHY TV\n"
+	.string "It gave me a headache…\p"
 # 323 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "helping you?$"
+	.string "Incidentally, is my old TEACHY TV\n"
 # 324 "data/maps/ViridianCity_Frlg/scripts.pory"
-
+	.string "helping you?$"
 # 325 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_Text_MyGrandsonOnTheShow::
+
 # 326 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "Wahaha!\n"
+ViridianCity_Text_MyGrandsonOnTheShow::
 # 327 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "It's my grandson on the show!\p"
+	.string "Wahaha!\n"
 # 328 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "Since he's the one doing the\n"
+	.string "It's my grandson on the show!\p"
 # 329 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "teaching, you're bound to learn.$"
+	.string "Since he's the one doing the\n"
 # 330 "data/maps/ViridianCity_Frlg/scripts.pory"
-
+	.string "teaching, you're bound to learn.$"
 # 331 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_Text_TooBusyForTeachyTV::
+
 # 332 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "Hm… You're too busy to not even\n"
+ViridianCity_Text_TooBusyForTeachyTV::
 # 333 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "have the time for TEACHY TV…\p"
+	.string "Hm… You're too busy to not even\n"
 # 334 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "Time is money, and neither should\n"
+	.string "have the time for TEACHY TV…\p"
 # 335 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "be ill spent…$"
+	.string "Time is money, and neither should\n"
 # 336 "data/maps/ViridianCity_Frlg/scripts.pory"
-
+	.string "be ill spent…$"
 # 337 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_Text_CitySign::
+
 # 338 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "VIRIDIAN CITY \n"
+ViridianCity_Text_CitySign::
 # 339 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "The Eternally Green Paradise$"
+	.string "VIRIDIAN CITY \n"
 # 340 "data/maps/ViridianCity_Frlg/scripts.pory"
-
+	.string "The Eternally Green Paradise$"
 # 341 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_Text_CatchMonsForEasierBattles::
+
 # 342 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "TRAINER TIPS\p"
+ViridianCity_Text_CatchMonsForEasierBattles::
 # 343 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "Catch POKéMON and expand your\n"
-# 344 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "collection.\p"
-# 345 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "The more you have, the easier it\n"
-# 346 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "is to battle.$"
-# 347 "data/maps/ViridianCity_Frlg/scripts.pory"
-
-# 348 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_Text_MovesLimitedByPP::
-# 349 "data/maps/ViridianCity_Frlg/scripts.pory"
 	.string "TRAINER TIPS\p"
+# 344 "data/maps/ViridianCity_Frlg/scripts.pory"
+	.string "Catch POKéMON and expand your\n"
+# 345 "data/maps/ViridianCity_Frlg/scripts.pory"
+	.string "collection.\p"
+# 346 "data/maps/ViridianCity_Frlg/scripts.pory"
+	.string "The more you have, the easier it\n"
+# 347 "data/maps/ViridianCity_Frlg/scripts.pory"
+	.string "is to battle.$"
+# 348 "data/maps/ViridianCity_Frlg/scripts.pory"
+
+# 349 "data/maps/ViridianCity_Frlg/scripts.pory"
+ViridianCity_Text_MovesLimitedByPP::
 # 350 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "The battle moves of POKéMON are\n"
+	.string "TRAINER TIPS\p"
 # 351 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "limited by their POWER POINTS, PP.\p"
+	.string "The battle moves of POKéMON are\n"
 # 352 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "To replenish PP, rest your tired\n"
+	.string "limited by their POWER POINTS, PP.\p"
 # 353 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "POKéMON at a POKéMON CENTER.$"
+	.string "To replenish PP, rest your tired\n"
 # 354 "data/maps/ViridianCity_Frlg/scripts.pory"
-
+	.string "POKéMON at a POKéMON CENTER.$"
 # 355 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_Text_GymSign::
-# 356 "data/maps/ViridianCity_Frlg/scripts.pory"
-	.string "VIRIDIAN CITY POKéMON GYM$"
-# 357 "data/maps/ViridianCity_Frlg/scripts.pory"
 
+# 356 "data/maps/ViridianCity_Frlg/scripts.pory"
+ViridianCity_Text_GymSign::
+# 357 "data/maps/ViridianCity_Frlg/scripts.pory"
+	.string "VIRIDIAN CITY POKéMON GYM$"
 # 358 "data/maps/ViridianCity_Frlg/scripts.pory"
-ViridianCity_Text_GymDoorsAreLocked::
+
 # 359 "data/maps/ViridianCity_Frlg/scripts.pory"
+ViridianCity_Text_GymDoorsAreLocked::
+# 360 "data/maps/ViridianCity_Frlg/scripts.pory"
 	.string "VIRIDIAN GYM's doors are locked…$"
 
 ViridianCity_Custom_PokemonCry::
-# 364 "data/maps/ViridianCity_Frlg/scripts.pory"
-	lock
 # 365 "data/maps/ViridianCity_Frlg/scripts.pory"
-	getoverworldwildencounterspecies VAR_LAST_TALKED
+	lock
 # 366 "data/maps/ViridianCity_Frlg/scripts.pory"
-	playmoncry VAR_LAST_TALKED, 0
+	getoverworldwildencounterspecies VAR_LAST_TALKED
 # 367 "data/maps/ViridianCity_Frlg/scripts.pory"
-	waitmoncry
+	playmoncry VAR_LAST_TALKED, 0
 # 368 "data/maps/ViridianCity_Frlg/scripts.pory"
+	msgbox ViridianCity_Custom_PokemonCry_Text_0, MSGBOX_NPC
+# 369 "data/maps/ViridianCity_Frlg/scripts.pory"
+	waitmoncry
+# 370 "data/maps/ViridianCity_Frlg/scripts.pory"
 	release
 	end
 
 
 ViridianCity_Custom_NidorinoTrainer::
-# 373 "data/maps/ViridianCity_Frlg/scripts.pory"
-	lock
-# 374 "data/maps/ViridianCity_Frlg/scripts.pory"
-	faceplayer
 # 375 "data/maps/ViridianCity_Frlg/scripts.pory"
-	msgbox ViridianCity_Custom_NidorinoTrainer_Text_0, MSGBOX_NPC
+	lock
 # 376 "data/maps/ViridianCity_Frlg/scripts.pory"
-	applymovement LOCALID_NIDO_TRAINER, Common_Movement_FaceOriginalDirection
+	faceplayer
 # 377 "data/maps/ViridianCity_Frlg/scripts.pory"
+	msgbox ViridianCity_Custom_NidorinoTrainer_Text_0, MSGBOX_NPC
+# 378 "data/maps/ViridianCity_Frlg/scripts.pory"
 	release
+# 379 "data/maps/ViridianCity_Frlg/scripts.pory"
+	applymovement LOCALID_NIDO_TRAINER, ViridianCity_Custom_NidorinoTrainer_Movement_0
+# 380 "data/maps/ViridianCity_Frlg/scripts.pory"
+	waitmovement 0
 	end
 
 
 ViridianCity_Custom_GengarTrainer::
-# 382 "data/maps/ViridianCity_Frlg/scripts.pory"
-	lock
-# 383 "data/maps/ViridianCity_Frlg/scripts.pory"
-	faceplayer
-# 384 "data/maps/ViridianCity_Frlg/scripts.pory"
-	msgbox ViridianCity_Custom_GengarTrainer_Text_0, MSGBOX_NPC
 # 385 "data/maps/ViridianCity_Frlg/scripts.pory"
-	applymovement LOCALID_GENGAR_TRAINER, Common_Movement_FaceOriginalDirection
+	lock
 # 386 "data/maps/ViridianCity_Frlg/scripts.pory"
+	faceplayer
+# 387 "data/maps/ViridianCity_Frlg/scripts.pory"
+	msgbox ViridianCity_Custom_GengarTrainer_Text_0, MSGBOX_NPC
+# 388 "data/maps/ViridianCity_Frlg/scripts.pory"
 	release
+# 389 "data/maps/ViridianCity_Frlg/scripts.pory"
+	applymovement LOCALID_GENGAR_TRAINER, ViridianCity_Custom_GengarTrainer_Movement_0
+# 390 "data/maps/ViridianCity_Frlg/scripts.pory"
+	waitmovement 0
 	end
 
 
+# 379 "data/maps/ViridianCity_Frlg/scripts.pory"
+ViridianCity_Custom_NidorinoTrainer_Movement_0:
+# 379 "data/maps/ViridianCity_Frlg/scripts.pory"
+	face_down
+	step_end
+
+# 389 "data/maps/ViridianCity_Frlg/scripts.pory"
+ViridianCity_Custom_GengarTrainer_Movement_0:
+# 389 "data/maps/ViridianCity_Frlg/scripts.pory"
+	face_up
+	step_end
+
+ViridianCity_Custom_PokemonCry_Text_0:
+# 368 "data/maps/ViridianCity_Frlg/scripts.pory"
+	.string "It's battling furiously!$"
+
 ViridianCity_Custom_NidorinoTrainer_Text_0:
-# 375 "data/maps/ViridianCity_Frlg/scripts.pory"
+# 377 "data/maps/ViridianCity_Frlg/scripts.pory"
 	.string "Look out NIDORINO!$"
 
 ViridianCity_Custom_GengarTrainer_Text_0:
-# 384 "data/maps/ViridianCity_Frlg/scripts.pory"
+# 387 "data/maps/ViridianCity_Frlg/scripts.pory"
 	.string "GENGAR, use SHADOW CLAW!$"

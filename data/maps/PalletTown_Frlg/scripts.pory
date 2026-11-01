@@ -471,10 +471,10 @@ PalletTown_Text_OakPokemonResearchLab::
 	.string "OAK POKéMON RESEARCH LAB$"
 
 PalletTown_Text_PlayersHouse::
-	.string "{PLAYER}'s house$"
+	.string "This is my mailbox.$"
 
 PalletTown_Text_RivalsHouse::
-	.string "{RIVAL}'s house$"
+	.string "This is {RIVAL}'s mailbox.$"
 
 PalletTown_Text_OakLetMeSeePokedex::
 	.string "OAK: Ah, {PLAYER}!\n"
@@ -542,4 +542,17 @@ PalletTown_Text_PressStartToOpenMenuCopy::
 `
 script PalletTown_EventScript_TownSign {
 	msgbox("PALLET TOWN\nShades of your journey await!", MSGBOX_SIGN)
+}
+
+script PalletTown_EventScript_LockedHouse {
+	msgbox("This house is locked.", MSGBOX_SIGN)
+}
+
+script PalletTown_EventScript_LockedHouseMailbox {
+	msgbox("This is MR. LEWIS's mailbox.", MSGBOX_SIGN)
+}
+
+script PalletTown_EventScript_OaksArea {
+	msgbox("OAK's RESEARCH PARK.", MSGBOX_SIGN)
+	msgbox("He always keeps it locked.", MSGBOX_NPC)
 }

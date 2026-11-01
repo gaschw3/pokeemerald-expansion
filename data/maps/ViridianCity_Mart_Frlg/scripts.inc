@@ -61,162 +61,166 @@ ViridianCity_Mart_EventScript_ParcelScene::
 # 31 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
 	setvar VAR_MAP_SCENE_VIRIDIAN_CITY_MART, 1
 # 32 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	giveitem_msg ViridianCity_Mart_Text_ReceivedOaksParcelFromClerk, ITEM_OAKS_PARCEL, 1, MUS_RG_OBTAIN_KEY_ITEM
+	textcolor NPC_TEXT_COLOR_NEUTRAL
 # 33 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	setvar VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 5
+	giveitem_msg ViridianCity_Mart_Text_ReceivedOaksParcelFromClerk, ITEM_OAKS_PARCEL, 1, MUS_RG_OBTAIN_KEY_ITEM
 # 34 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	releaseall
+	call EventScript_RestorePrevTextColor
 # 35 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	end
+	setvar VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 5
 # 36 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-
+	releaseall
 # 37 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-ViridianCity_Mart_Movement_ApproachCounter::
+	end
 # 38 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	walk_up
+
 # 39 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	walk_up
+ViridianCity_Mart_Movement_ApproachCounter::
 # 40 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
 	walk_up
 # 41 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
 	walk_up
 # 42 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	walk_in_place_faster_left
+	walk_up
 # 43 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	step_end
+	walk_up
 # 44 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-
+	walk_in_place_faster_left
 # 45 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-ViridianCity_Mart_Movement_FacePlayer::
+	step_end
 # 46 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	delay_16
+
 # 47 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	delay_16
+ViridianCity_Mart_Movement_FacePlayer::
 # 48 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
 	delay_16
 # 49 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
 	delay_16
 # 50 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	walk_in_place_faster_right
+	delay_16
 # 51 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	step_end
+	delay_16
 # 52 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-
+	walk_in_place_faster_right
 # 53 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-ViridianCity_Mart_EventScript_Clerk::
+	step_end
 # 54 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	lock
+
 # 55 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	faceplayer
+ViridianCity_Mart_EventScript_Clerk::
 # 56 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	goto_if_eq VAR_MAP_SCENE_VIRIDIAN_CITY_MART, 1, ViridianCity_Mart_EventScript_SayHiToOak
+	lock
 # 57 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	message gText_HowMayIServeYou
+	faceplayer
 # 58 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	waitmessage
+	goto_if_eq VAR_MAP_SCENE_VIRIDIAN_CITY_MART, 1, ViridianCity_Mart_EventScript_SayHiToOak
 # 59 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	pokemart ViridianCity_Mart_Items
+	message gText_HowMayIServeYou
 # 60 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	msgbox gText_PleaseComeAgain
+	waitmessage
 # 61 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	release
+	pokemart ViridianCity_Mart_Items
 # 62 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	end
+	msgbox gText_PleaseComeAgain
 # 63 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-
+	release
 # 64 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	.align 2
+	end
 # 65 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-ViridianCity_Mart_Items::
+
 # 66 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	.2byte ITEM_POKE_BALL
+	.align 2
 # 67 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	.2byte ITEM_POTION
+ViridianCity_Mart_Items::
 # 68 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_POKE_BALL
 # 69 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	.2byte ITEM_PARALYZE_HEAL
+	.2byte ITEM_POTION
 # 70 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	.2byte ITEM_NONE
+	.2byte ITEM_ANTIDOTE
 # 71 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	release
+	.2byte ITEM_PARALYZE_HEAL
 # 72 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	end
+	.2byte ITEM_NONE
 # 73 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-
-# 74 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-ViridianCity_Mart_EventScript_SayHiToOak::
-# 75 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	msgbox ViridianCity_Mart_Text_SayHiToOakForMe
-# 76 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
 	release
+# 74 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
+	end
+# 75 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
+
+# 76 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
+ViridianCity_Mart_EventScript_SayHiToOak::
 # 77 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	end
+	msgbox ViridianCity_Mart_Text_SayHiToOakForMe
 # 78 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-
+	release
 # 79 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-ViridianCity_Mart_EventScript_Woman::
+	end
 # 80 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	msgbox ViridianCity_Mart_Text_ShopDoesGoodBusinessInAntidotes, MSGBOX_NPC
+
 # 81 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	end
+ViridianCity_Mart_EventScript_Woman::
 # 82 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-
+	msgbox ViridianCity_Mart_Text_ShopDoesGoodBusinessInAntidotes, MSGBOX_NPC
 # 83 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-ViridianCity_Mart_EventScript_Youngster::
-# 84 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	msgbox ViridianCity_Mart_Text_GotToBuySomePotions, MSGBOX_NPC
-# 85 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
 	end
+# 84 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
+
+# 85 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
+ViridianCity_Mart_EventScript_Youngster::
 # 86 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-
+	msgbox ViridianCity_Mart_Text_GotToBuySomePotions, MSGBOX_NPC
 # 87 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-ViridianCity_Mart_Text_YouCameFromPallet::
+	end
 # 88 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	.string "Hey!\n"
+
 # 89 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	.string "You came from PALLET TOWN?$"
+ViridianCity_Mart_Text_YouCameFromPallet::
 # 90 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-
+	.string "Hey!\n"
 # 91 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-ViridianCity_Mart_Text_TakeThisToProfOak::
+	.string "You came from PALLET TOWN?$"
 # 92 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	.string "You know PROF. OAK, right?\p"
+
 # 93 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	.string "His order came in.\n"
+ViridianCity_Mart_Text_TakeThisToProfOak::
 # 94 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	.string "Can I get you to take it to him?$"
+	.string "You know PROF. OAK, right?\p"
 # 95 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-
+	.string "His order came in.\n"
 # 96 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-ViridianCity_Mart_Text_ReceivedOaksParcelFromClerk::
+	.string "Can I get you to take it to him?$"
 # 97 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	.string "{PLAYER} received OAK'S PARCEL\n"
+
 # 98 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	.string "from the POKéMON MART clerk.$"
+ViridianCity_Mart_Text_ReceivedOaksParcelFromClerk::
 # 99 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-
+	.string "{PLAYER} received OAK'S PARCEL\n"
 # 100 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-ViridianCity_Mart_Text_SayHiToOakForMe::
+	.string "from the POKéMON MART clerk.$"
 # 101 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	.string "Okay, thanks! Please say hi to\n"
+
 # 102 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	.string "PROF. OAK for me, too.$"
+ViridianCity_Mart_Text_SayHiToOakForMe::
 # 103 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-
+	.string "Okay, thanks! Please say hi to\n"
 # 104 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-ViridianCity_Mart_Text_ShopDoesGoodBusinessInAntidotes::
+	.string "PROF. OAK for me, too.$"
 # 105 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	.string "This shop does good business in\n"
-# 106 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	.string "ANTIDOTES, I've heard.$"
-# 107 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
 
+# 106 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
+ViridianCity_Mart_Text_ShopDoesGoodBusinessInAntidotes::
+# 107 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
+	.string "This shop does good business in\n"
 # 108 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-ViridianCity_Mart_Text_GotToBuySomePotions::
+	.string "ANTIDOTES, I've heard.$"
 # 109 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	.string "I've got to buy some POTIONS.\p"
+
 # 110 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
-	.string "You never know when your POKéMON\n"
+ViridianCity_Mart_Text_GotToBuySomePotions::
 # 111 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
+	.string "I've got to buy some POTIONS.\p"
+# 112 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
+	.string "You never know when your POKéMON\n"
+# 113 "data/maps/ViridianCity_Mart_Frlg/scripts.pory"
 	.string "will need quick healing.$"

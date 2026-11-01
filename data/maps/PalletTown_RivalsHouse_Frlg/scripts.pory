@@ -176,8 +176,8 @@ PalletTown_RivalsHouse_Text_HeardYouBattledRival::
 	.string "I wish I'd seen that!$"
 
 PalletTown_RivalsHouse_Text_ErrandForGrandpaThisWillHelp::
-	.string "Grandpa asked you to run an\n"
-	.string "errand?\p"
+	.string "Grandpa asked you to catch\n"
+	.string "POKéMON too?\p"
 	.string "Gee, that's lazy of him.\n"
 	.string "Here, this will help you.$"
 
@@ -292,3 +292,17 @@ PalletTown_RivalsHouse_Text_LovelyAndSweetClefairy::
 	.string "CLEFAIRY”$"
 
 `
+script PalletTown_RivalsHouse_EventScript_Stairs {
+	lockall
+	waitse
+	playse(SE_PIN)
+	applymovement(LOCALID_DAISY, Common_Movement_ExclamationMark)
+	waitmovement(0)
+	applymovement(LOCALID_DAISY, Common_Movement_WalkInPlaceFasterUp)
+	waitmovement(0)
+	msgbox("DAISY: Dad's working upstairs,\nright now and he doesn't like\l to be disturbed")
+	applymovement(LOCALID_PLAYER, moves(walk_left))
+	waitmovement(0)
+	releaseall
+	end
+}

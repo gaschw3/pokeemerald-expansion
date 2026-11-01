@@ -5738,7 +5738,7 @@
       "id": "LAYOUT_PALLET_TOWN_PLAYERS_HOUSE_1F_FRLG",
       "name": "PalletTown_PlayersHouse_1F_Layout",
       "width": 13,
-      "height": 10,
+      "height": 12,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_BuildingFrlg",
@@ -5751,7 +5751,7 @@
       "id": "LAYOUT_PALLET_TOWN_PLAYERS_HOUSE_2F_FRLG",
       "name": "PalletTown_PlayersHouse_2F_FRLG_Layout",
       "width": 12,
-      "height": 9,
+      "height": 11,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_BuildingFrlg",
@@ -5768,7 +5768,7 @@
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_BuildingFrlg",
-      "secondary_tileset": "gTileset_GenericBuilding2",
+      "secondary_tileset": "gTileset_GenericBuilding1",
       "border_filepath": "data/layouts/PalletTown_RivalsHouse_Frlg/border.bin",
       "blockdata_filepath": "data/layouts/PalletTown_RivalsHouse_Frlg/map.bin",
       "layout_version": "frlg"
@@ -5776,7 +5776,7 @@
     {
       "id": "LAYOUT_PALLET_TOWN_PROFESSOR_OAKS_LAB",
       "name": "PalletTown_ProfessorOaksLab_Layout",
-      "width": 13,
+      "width": 14,
       "height": 14,
       "border_width": 2,
       "border_height": 2,
@@ -6244,7 +6244,7 @@
     {
       "id": "LAYOUT_PALLET_TOWN",
       "name": "PalletTown_Layout",
-      "width": 24,
+      "width": 34,
       "height": 20,
       "border_width": 2,
       "border_height": 2,
@@ -10230,6 +10230,19 @@
       "secondary_tileset": "gTileset_MtEmber",
       "border_filepath": "data/layouts/OneIsland_KindleRoad_EmberSpa_Frlg/border.bin",
       "blockdata_filepath": "data/layouts/OneIsland_KindleRoad_EmberSpa_Frlg/map.bin",
+      "layout_version": "frlg"
+    },
+    {
+      "id": "LAYOUT_VIRIDIAN_CITY_FISHER_HOUSE_FRLG",
+      "name": "ViridianCity_FIsherHouse_Frlg_Layout",
+      "width": 11,
+      "height": 9,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_BuildingFrlg",
+      "secondary_tileset": "gTileset_GenericBuilding2",
+      "border_filepath": "data/layouts/ViridianCity_FIsherHouse_Frlg/border.bin",
+      "blockdata_filepath": "data/layouts/ViridianCity_FIsherHouse_Frlg/map.bin",
       "layout_version": "frlg"
     }
   ]
